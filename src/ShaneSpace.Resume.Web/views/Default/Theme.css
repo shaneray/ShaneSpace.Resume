@@ -1,0 +1,102 @@
+﻿/*print*/
+@media print {
+    #nav {
+        display: none;
+    }
+}
+
+/* default theme */
+h1, h2, h3 {
+    min-height: inherit;
+    margin: 0;
+}
+
+h1, h3 {
+    color: #3C6293 !important;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+/* header */
+#header {
+    background-color: white !important;
+    margin-bottom: 14px;
+}
+
+#header h1 {
+    color: black !important;
+}
+
+    #header aside {
+        text-align: right;
+        padding: 10px;
+    }
+
+    #header .profilePicture {
+        border-radius: 50%;
+        height: 100px;
+        border: 1px solid black;
+    }
+
+/* navigation */
+#nav {
+    background-color: #3C6293;
+    color: white;
+}
+
+    #nav .container {
+        padding: 5px !important;
+        margin-bottom: 14px;
+    }
+
+
+/* content */
+#content aside {
+    text-align: right;
+    padding: 10px;
+    background-color: #E6E6E6 !important;
+}
+
+#content section {
+    margin-bottom: 10px;
+}
+
+#skills div {
+    text-align: center;
+}
+
+#resumeJson {
+    display: none;
+}
+
+#content #profiles .url {
+    margin-bottom: 10px;
+}
+
+#content .segment {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+#work .position, #education .area {
+    color: black;
+}
+
+#work .date, #education .date {
+    font-size: small;
+    color: gray;
+}
+
+#education .courses {
+    margin-bottom: 14px;
+}
+
+#footer {
+    display: none;
+}
+
+.nuget {
+    content: url(img/nuget.svg)
+}

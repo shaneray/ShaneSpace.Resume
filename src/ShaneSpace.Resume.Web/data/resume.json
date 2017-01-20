@@ -1,0 +1,285 @@
+{
+  "basics": {
+    "name": "Shane Ray",
+    "label": "Senior Software Developer",
+    "picture": "https://en.gravatar.com/userimage/76770699/fb5dac69f21c8ec852d9df247ba886f8.jpg?size=200",
+    "email": "shane.ray87@gmail.com",
+    "phone": "(502) 689-9950",
+    "website": "https://ShaneSpace.Net",
+    "summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy.",
+    "location": {
+      "address": "4907 Woodsend Rd",
+      "postalCode": "40229",
+      "city": "Louisville",
+      "countryCode": "US",
+      "region": "Kentucky"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "ShaneRay",
+        "url": "https://github.com/shaneray"
+      },
+      {
+        "network": "nuget",
+        "username": "ShaneRay",
+        "url": "https://www.nuget.org/profiles/shaneray"
+      },
+      {
+        "network": "Stack Exchange",
+        "username": "user:6755216",
+        "url": "https://stackexchange.com/users/6755216/shane-ray"
+      },
+      {
+        "network": "Stack Overflow",
+        "username": "user:5203905",
+        "url": "https://stackoverflow.com/users/5203905/shane-ray"
+      },
+      {
+        "network": "Slack",
+        "username": "Shane Ray",
+        "url": "https://shanespacedev.slack.com/"
+      },
+      {
+        "network": "Twitter",
+        "username": "ShaneRay87",
+        "url": "https://twitter.com/shaneray87"
+      },
+      {
+        "network": "Reddit",
+        "username": "ShaneRay87",
+        "url": "https://www.reddit.com/user/shaneray87/"
+      },
+      {
+        "network": "Google Plus",
+        "username": "Shane Ray",
+        "url": "https://plus.google.com/u/0/109176240380352789446"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "ShaneRay",
+        "url": "https://www.linkedin.com/in/shaneray"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Birch",
+      "position": "Senior Software Developer",
+      "website": "http://www.birch.com",
+      "startDate": "2014-6-01",
+      "endDate": "",
+      "summary": "Led efforts of migration of companywide primary B/OSS legacy WCF client / server application to Web API and AngularJS system",
+      "highlights": [
+        "Created integrated Git Flow development process via JIRA and Atlassian Stash with TeamCity and SlashHQ integration. ",
+        "Implemented an automated continous delivery system using Octopus Deploy",
+        "Established best practices for REST API resources,and documentation via Swagger",
+        "Worked with key business stakeholders during acquisition for knowledge share and system integration",
+        "Wrote best practice guidelines and documentation for developer workflow and system design",
+        "Led daily standups and coordinated prioritization of work",
+        "Created and conducted development continuous education, and training on new policies and technology such as unit testing, GitFlow workflow, message queuing, and general developer productivity tips",
+        "Redesigned billing system, transitioning from a collection of thousands of lines of SQL stored procedures to a message based system to ensure better scalability, reliability while increasing performance 50x. Backend is Topshelf application hosting Hangfire for scheduling and MassTransit 3.0 for ESB ",
+        "Performed technical screenings of interview candidates to ensure not only candidates had the appropriate skill but also where a good cultural fit",
+        "Performed code reviews on all committed line-of-business code to ensure standards and quality were met"
+      ]
+    },
+    {
+      "company": "Cbeyond",
+      "position": "Senior .NET Developer / Team Lead",
+      "website": "",
+      "startDate": "2010-11-1",
+      "endDate": "2014-6-01",
+      "summary": "Cloud Automation Team Lead and .NET Architect",
+      "highlights": [
+        "Designed SOA layer architecture and led development for VMWare / Hyper-V provisioning. Implemented using WCF and ASP.NET WebAPI 1.0",
+        "Managed and colaborated with geographically diverse team to implement portal front end for Total Cloud product",
+        "Provided software guidance, established technical roadmaps, and documented coding standards and procedures for team",
+        "Worked with product development and cloud engineering teams to establish product feature set and implementation paths",
+        "Led team that won innovation award for custom communication protocol over Hyper-V KVP",
+        "Oversaw custom written billing system and led PCI compliance initiatives",
+        "Coordinated with change management and deployment teams to guide releases",
+        "Worked with primary business stakeholders to integrate existing MaximumASP systems into Cbeyond systems"
+      ]
+    },
+    {
+      "company": "MaximumASP",
+      "position": "Senior .NET Developer",
+      "website": "https://www.maximumasp.com",
+      "startDate": "2004-8-30",
+      "endDate": "2010-11-1",
+      "summary": "Designed software architecture and UI of primary business Portal used by both internal employees and customers utilizing C#, ASP.Net 4, HTML5, CSS3 and JavaScript / jQuery",
+      "highlights": [
+        "Created coding standards and guidelines used by all team members for projects",
+        "Implemented continuous integration utilizing CruiseControl and later TeamCity",
+        "Designed and developed supporting provisioning web services wrapping third party hardware and software implementations in C# utilizing .NET ASMX Services / WCF / Rest API",
+        "Member of product design, architecture and implementation team for Cloud Servers and Cloud Sites products",
+        "Wrote support applications for networking and hardware teams",
+        "Design and created NOC / SOC monitoring software for real time display of critical security, support, hardware and networking information utilizing SOA, HTML, CSS3 and jQuery",
+        "Worked as Tier 3 support with customers to troubleshoot deployment and integration issues with our platform",
+        "Wrote knowledge base articles to assist both internal employees and customers with common deployment and application issues with our environment"
+      ]
+    }
+  ],
+  "volunteer": [ ],
+  "education": [
+    {
+      "institution": "Bullitt Central",
+      "area": "Student",
+      "studyType": "General Studies",
+      "startDate": "8/6/2000",
+      "endDate": "6/5/2005"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Excellence Award",
+      "date": "1/1/2012",
+      "awarder": "Cbeyond",
+      "summary": "Given in recognition of outstanding delivery of our Total Cloud Data Center provisioning and network automation solution."
+    }
+  ],
+  "publications": [ ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "MVC 1.0 - 5.0",
+        "ASP.NET Web API 1.0 - 2.2",
+        "ASP.NET WebForms",
+        "HTML5",
+        "Angular",
+        "jQuery",
+        "node",
+        "Grunt",
+        "Gulp",
+        "Bower",
+        "C#",
+        "Open Source Software",
+        "CQRS",
+        "DDD",
+        "OWIN",
+        "LINQ",
+        "JSON",
+        "XML",
+        "REST"
+      ]
+    },
+    {
+      "name": "Cloud Services",
+      "level": "Master",
+      "keywords": [
+        "Hyper-V",
+        "System Center",
+        "VMware",
+        "vCenter",
+        "Network Automation",
+        "Windows Server"
+      ]
+    },
+    {
+      "name": "Data Storage",
+      "level": "Master",
+      "keywords": [
+        "SQL Server",
+        "RavenRB",
+        "MongoDB",
+        "RabbitMQ",
+        "Redis"
+      ]
+    },
+    {
+      "name": "Source Control",
+      "level": "Master",
+      "keywords": [
+        "Git",
+        "TFS",
+        "SourceGear Vault",
+        "Atlassian Stash Adminstration",
+        "GitHub Administration"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Master",
+      "keywords": [
+        "TeamCity",
+        "Octopus Deploy",
+        "AppVeyor",
+        "GitHub",
+        "Nuget Package Administration",
+        "Visual Studio Team Services"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Master",
+      "keywords": [
+        "MassTransit",
+        "TopShelf",
+        "RabbitMQ",
+        "Hangfire"
+      ]
+    },
+    {
+      "name": "Unit Testing",
+      "level": "Master",
+      "keywords": [
+        "xUnit",
+        "nUnit",
+        "MSTest",
+        "Fixie",
+        "NCrunch"
+      ]
+    },
+    {
+      "name": "Other",
+      "level": "Master",
+      "keywords": [
+        "Serilog",
+        "Log4Net",
+        "EntityFramework",
+        "AutoMapper",
+        "Autofac",
+        "SimpleInjector",
+        "Ninject",
+        "Swagger",
+        "Swashbuckle",
+        "SEQ",
+        "PowerShell",
+        "Mediatr",
+        "Tooling",
+        "Extensions"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Software Development",
+      "keywords": []
+    },
+    {
+      "name": "Cloud Computing",
+      "keywords": [ ]
+    },
+    {
+      "name": "Systems Integration and Automation",
+      "keywords": [ ]
+    },
+    {
+      "name": "Electronics",
+      "keywords": [ ]
+    },
+    {
+      "name": "Space",
+      "keywords": [ ]
+    }
+  ],
+  "references": []
+}

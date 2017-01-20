@@ -1,0 +1,197 @@
+﻿<header id="header">
+    <div class="container">
+        <aside class="col-sm-2">
+            <img class="profilePicture" ng-src="{{resume.basics.picture || defaultPicture}}" alt="{{resume.basics.name}}" />
+        </aside>
+        <div class="col-sm-9 headerContainer">
+            <h1 class="name">
+                {{resume.basics.name}}
+            </h1>
+            <h2 class="headerLabel">
+                {{resume.basics.label}}
+            </h2>
+        </div>
+    </div>
+</header>
+
+<div id="nav">
+    <div class="container">
+        <div class="mini ui button" onclick="$('#settings').modal('show');">
+            <i class="ui icon setting"></i>
+        </div>
+        <a class="mini ui button" href="#interactive">Interactive Resume</a>
+    </div>
+</div>
+
+<div id="content" class="container">
+    <div id="contentWrapper">
+
+        <section id="contact" class="row">
+            <aside class="col-sm-2">
+                <h3>Contact</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <strong>Email</strong>
+                        <div class="email">
+                            <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <strong>Website</strong>
+                        <div class="website">
+                            <a href="{{resume.basics.website}}">{{resume.basics.website}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="row">
+            <aside class="col-sm-2">
+                <h3>About</h3>
+            </aside>
+            <div class="col-sm-10">
+                <p>{{resume.basics.summary}}</p>
+            </div>
+        </section>
+
+        <section id="profiles" class="row">
+            <aside class="col-sm-2">
+                <h3>Profiles</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4" ng-repeat="profile in resume.basics.profiles">
+                        <div class="profileContainer ui raised segment">
+                            <strong class="network">
+                                <i class="huge {{profile.network.toLowerCase()}} square icon pull-left"></i>{{profile.network}}
+                            </strong>
+                            <div class="username">
+                                <div class="url">
+                                    <a href="{{profile.url}}">{{profile.username}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="row">
+            <aside class="col-sm-2">
+                <h3>Education</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-12 education" ng-repeat="education in resume.education">
+                        <h3>
+                            <span class="area">
+                                {{education.area}} @
+                            </span>
+                            <span class="institution">{{education.institution}}</span>
+                            <span class="date">
+                                ({{education.startDate | date: "MM/yyyy"}} — {{education.endDate | date: "MM/yyyy" || "present"}})
+                            </span>
+                        </h3>
+                        <div class="studyType">
+                            {{education.studyType}}
+                        </div>
+                        <div class="courses">
+                            <strong>Courses</strong>
+                            <ul>
+                                <li ng-repeat="course in education.courses">
+                                    {{course}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="row">
+            <aside class="col-sm-2">
+                <h3>Work</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+
+                    <div class="col-sm-12 segment" ng-repeat="work in resume.work">
+                        <h3 class="company">
+                            <span class="position">
+                                {{work.position}} @
+                            </span>
+                            {{work.company}}
+                            <span class="date">
+                                ({{work.startDate | date: "MM/yyyy"}} — {{work.endDate | date: "MM/yyyy" || "present"}})
+                            </span>
+                            <span class="website pull-right">
+                                <a href="{{work.website}}">{{work.website}}</a>
+                            </span>
+                        </h3>
+
+                        <div class="ui blue segment">
+                            <div class="summary">
+                                <p>{{work.summary}}</p>
+                            </div>
+                            <h4>Highlights</h4>
+                            <ul class="highlights">
+                                <li class="bullet" ng-repeat="highlight in work.highlights">{{highlight}}</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="skills" class="row">
+            <aside class="col-sm-2">
+                <h3>Skills</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4" ng-repeat="skill in resume.skills">
+                        <div class="name">
+                            <h3>{{skill.name}}</h3>
+                        </div>
+                        <div class="ui blue segment">
+                            <div ng-repeat="keyword in skill.keywords">{{keyword}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages" class="row">
+            <aside class="col-sm-2">
+                <h3>Languages</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-3" ng-repeat="language in resume.languages">
+                        <div class="language">
+                            <strong>{{language.language}}</strong>
+                        </div>
+                        <div class="fluency">
+                            {{language.fluency}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="container">
+    <section id="footer" class="row">
+        <div class="footerWrapper">
+            {{resume.basics.name}} - {{resume.basics.label}}
+        </div>
+    </section>
+</div>
