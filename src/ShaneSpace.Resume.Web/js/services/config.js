@@ -3,7 +3,7 @@
     function ($http) {
         // declare
         this.promise = null;
-        configUrl = "/config.json";
+        configUrl = "/resume-config.json";
 
         // methods
         function loadConfig() {
