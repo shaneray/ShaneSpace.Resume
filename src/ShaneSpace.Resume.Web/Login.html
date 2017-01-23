@@ -1,7 +1,7 @@
 ﻿<link href="Css/Login.css" rel="stylesheet" />
 <div class="desktop">
     <div class="login">
-        <img ng-src="{{resume.basics.picture || defaultPicture}}" />
+        <img ng-src="{{resume.basics.picture || config.defaultPicture}}" />
         <br />
         <div class="name">
             <h1>{{resume.basics.name}}</h1>
@@ -13,7 +13,7 @@
     </div>
     <a href="#interactive">
         <div class="altLogin">
-            <img ng-src="{{defaultPicture}}" class="pull-left" />
+            <img ng-src="{{config.defaultPicture}}" class="pull-left" />
             <div class="name">
                 {{resume.basics.name}}
             </div>

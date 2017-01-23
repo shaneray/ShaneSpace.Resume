@@ -11,12 +11,7 @@
             return $http.get(resumeJsonUrl)
                         .then(function (res) {
                             this.resumeJsonUrl = resumeJsonUrl;
-
-                            resume = res.data;
-
-                            // order skills by keyword count for better UI display
-                            resume.skills = resume.skills.sort(function (a, b) { return b.keywords.length - a.keywords.length });
-                            return resume;
+                            return res.data;
                         });
         };
 

@@ -4,8 +4,8 @@
         display: none;
     }
 }
-.print-only
-{
+
+.print-only {
     display: none;
 }
 
@@ -84,6 +84,14 @@ h1 {
     color: #2F96E8 !important;
 }
 
+#content #profiles .developer.story:before {
+    content: "\f18d";
+}
+
+#content #profiles .developer.story {
+    color: #2F96E8 !important;
+}
+
 #content #profiles .stack.overflow {
     color: #F48024 !important;
 }
@@ -106,9 +114,13 @@ h1 {
 
 #content #profiles .nuget {
     content: url(/img/nuget.png);
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin: 0 10px 0 10px;
+}
+
+#content #profiles .segment {
+    padding: 0.5em;
 }
 
 #content .segment {

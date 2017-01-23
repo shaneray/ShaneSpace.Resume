@@ -1,4 +1,4 @@
-﻿myApp.controller('StandardController', ['$scope', '$http','$timeout',
-        function ($scope, $http, $timeout) {
+﻿myApp.controller('StandardController', ['$scope',
+        function ($scope) {
             
         }]);

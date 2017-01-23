@@ -319,4 +319,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     #content #profiles .linkedin:before {
         color: #0077B5 !important;
     }
+
+    #content #profiles .developer.story:before {
+    color: #2F96E8 !important;
+}
 }

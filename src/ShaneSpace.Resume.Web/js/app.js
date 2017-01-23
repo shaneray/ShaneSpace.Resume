@@ -1,11 +1,10 @@
-﻿var myApp = angular.module('resume', ['ngRoute', 'windowManagerService', 'resumeService'])
+﻿var myApp = angular.module('resume', ['ngRoute', 'configService', 'windowManagerService', 'resumeService'])
     .config(config)
     .run(run);
 
-run.$inject = ['$rootScope', '$http', '$location', '$route'];
+run.$inject = ['$rootScope', '$http', '$location', '$route', 'config'];
 function run($rootScope, $http, $location, $route) {
     // declare globals
-    
 }
 
 config.$inject = ['$routeProvider', '$locationProvider'];
@@ -13,7 +12,7 @@ function config($routeProvider, $locationProvider) {
     $routeProvider.
         when('/default', {
             templateUrl: 'views/Default/Blank.html',
-            controller: 'DefaultController',
+            controller: 'StandardController',
             pageTitle: 'Shane Ray\'s Resume'
         }).
         when('/interactive', {
@@ -23,7 +22,7 @@ function config($routeProvider, $locationProvider) {
         }).
         when('/login', {
             templateUrl: 'Login.html',
-            controller: 'DefaultController',
+            controller: 'StandardController',
             pageTitle: 'Shane Ray\'s Resume'
         }).
         otherwise({
