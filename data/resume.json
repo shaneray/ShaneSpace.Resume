@@ -95,7 +95,9 @@
       "startDate": "2000-08-01",
       "endDate": "2001-06-01",
       "courses": [
-        "Robotics Club"
+        "Electronics 101",
+        "Robotics Club",
+        "Carpentry/Wood working"
       ]
     }
   ],
@@ -119,6 +121,14 @@
     {
       "name": "Space",
       "keywords": [ ]
+    },
+    {
+      "name": "Ferrets",
+      "keywords": [ ]
+    },
+    {
+      "name": "Bourbon",
+      "keywords": [ ]
     }
   ],
   "languages": [
@@ -137,18 +147,12 @@
         "MVC 1.0 - 5.0",
         "ASP.NET Web API 1.0 - 2.2",
         "ASP.NET WebForms",
+        "Grunt / Gulp / Bower",
         "HTML5",
         "Angular",
         "jQuery",
         "node",
-        "Grunt",
-        "Gulp",
-        "Bower",
         "C#",
-        "Open Source Software",
-        "CQRS",
-        "DDD",
-        "OWIN",
         "LINQ",
         "JSON",
         "XML",
@@ -244,7 +248,12 @@
         "PowerShell",
         "Mediatr",
         "Tooling",
-        "Extensions"
+        "Extensions",
+        "Cake Build",
+        "Open Source Software",
+        "CQRS",
+        "DDD",
+        "OWIN"
       ]
     }
   ],
