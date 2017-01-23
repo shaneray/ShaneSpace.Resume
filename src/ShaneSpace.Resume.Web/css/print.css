@@ -22,6 +22,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 @media print {
+    .print-only {
+        display: block;
+    }
+
     .segment, section {
         page-break-inside: avoid;
     }
@@ -286,5 +290,33 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     th.visible-sm,
     td.visible-sm {
         display: table-cell !important;
+    }
+
+    #content #profiles .github:before {
+        color: #4078C0 !important;
+    }
+
+    #content #profiles .stack.exchange:before {
+        color: #2F96E8 !important;
+    }
+
+    #content #profiles .stack.overflow:before {
+        color: #F48024 !important;
+    }
+
+    #content #profiles .twitter:before {
+        color: #55ACEE !important;
+    }
+
+    #content #profiles .reddit:before {
+        color: #FF4500 !important;
+    }
+
+    #content #profiles .google.plus:before {
+        color: #DB4437 !important;
+    }
+
+    #content #profiles .linkedin:before {
+        color: #0077B5 !important;
     }
 }

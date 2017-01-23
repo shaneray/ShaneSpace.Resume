@@ -10,10 +10,10 @@
   "basics": {
     "name": "Shane Ray",
     "label": "Senior Software Developer",
-    "picture": "https://en.gravatar.com/userimage/76770699/fb5dac69f21c8ec852d9df247ba886f8.jpg?size=200",
+    "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
     "email": "shane.ray87@gmail.com",
     "phone": "(502) 689-9950",
-    "website": "https://ShaneSpace.Net",
+    "website": "https://shanespaceblog.azurewebsites.net/",
     "summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy. Highly accomplished and motivated professional with a proven track record of being a resourceful problem-solver including excellent communication skills, incredible stamina and an eye for perfect detail.  Consistently recognized for providing rapid and cost-effective resolutions to challenging technical issues.",
     "location": {
       "address": "4907 Woodsend Rd",
@@ -29,7 +29,7 @@
         "url": "https://github.com/shaneray"
       },
       {
-        "network": "nuget",
+        "network": "NuGet",
         "username": "ShaneRay",
         "url": "https://www.nuget.org/profiles/shaneray"
       },
@@ -42,6 +42,11 @@
         "network": "Stack Overflow",
         "username": "user:5203905",
         "url": "https://stackoverflow.com/users/5203905/shane-ray"
+      },
+      {
+        "network": "Developer Story",
+        "username": "user:5203905",
+        "url": "http://stackoverflow.com/story/shaneray"
       },
       {
         "network": "Slack",
@@ -207,22 +212,28 @@
       ]
     },
     {
-      "name": "Unit Testing",
+      "name": "Testing",
       "level": "Master",
       "keywords": [
         "xUnit",
         "nUnit",
         "MSTest",
-        "Fixie",
-        "NCrunch"
+        "Benchmark.net"
+      ]
+    },
+    {
+      "name": "Logging",
+      "level": "Master",
+      "keywords": [
+        "Serilog",
+        "Log4Net",
+        "SEQ"
       ]
     },
     {
       "name": "Other",
       "level": "Master",
       "keywords": [
-        "Serilog",
-        "Log4Net",
         "EntityFramework",
         "AutoMapper",
         "Autofac",
@@ -230,7 +241,6 @@
         "Ninject",
         "Swagger",
         "Swashbuckle",
-        "SEQ",
         "PowerShell",
         "Mediatr",
         "Tooling",
@@ -248,21 +258,21 @@
       "endDate": "2017-01-01",
       "summary": "Helped lead efforts of migration of companywide primary B/OSS legacy WCF client / server application to Web API and AngularJS system.",
       "highlights": [
-        "Maintained and improved primary business Portal used by both internal employees and customers utilizing C#, ASP.Net 4, HTML5, CSS3 and JavaScript / jQuery",
+        "Maintained and improved primary business Portal used by both internal employees and customers utilizing C#, ASP.Net 4, HTML5, CSS3 and JavaScript / jQuery.",
         "Used Git Flow development process via Atlassian JIRA and Stash.",
         "Implemented an automated continous delivery system using TeamCity, Jenkins, and Octopus Deploy.",
         "Worked closely with Senior Architect to establish best practices for REST API resources, and documentation via Swagger.",
         "Worked with key business stakeholders during acquisition for knowledge share and system integration.",
-        "Managed, Onboarded, and colaborated with geographically diverse teams to ensure project delivery dates where met.",
+        "Managed, Onboarded, and colaborated with geographically diverse teams to ensure project delivery dates were met.",
         "Conducted development continuous education, and training on new policies and technology such as unit testing, GitFlow workflow, message queuing, and general developer productivity tips",
-        "Performed code reviews on committed line-of-business code to ensure standards and quality were met.",
+        "Performed code reviews on committed line-of-business code to ensure standards and quality, security, and performance were met.",
         "Worked with offshore development teams to find gaps in knowledge and documentation and updated internal documentation to fill those gaps.",
         "Focused on security and performance."
       ]
     },
     {
       "company": "Birch Communications (formerly Cbeyond)",
-      "position": "Cloud Engineering",
+      "position": "Cloud Engineer",
       "website": "https://birch.com/",
       "startDate": "2013-01-01",
       "endDate": "2013-12-01",
@@ -271,17 +281,6 @@
         "Developed and maintained many APIs and tools for fellow cloud engineers.",
         "Architected, developed, and maintained network management API.  This API provided provisioning, management, logging, and data retrieval for multiple of the following network devices: Fortinet Forigate, Juniper NetScreen, Cisco ASA, Cisco NSX, and Palo Alto.",
         "Architected, developed, and maintained VMware vSphere/VMware orchestrator management API.  This API provided provisioning, management, logging, and data retrieval for our VMware virtual machines."
-      ]
-    },
-    {
-      "company": "Cbeyond Cloud Services",
-      "position": "Cloud Engineering",
-      "website": "https://cbeyond.com/",
-      "startDate": "2013-01-01",
-      "endDate": "2013-12-01",
-      "summary": "Responsible for creating and re-defining processes for support staff.  Responsible for Tier 3 Support escalations.  Continued to develop tools and re-work systems to make Tier 2 Support teams and Tier 3 support more efficient, productive, and happy.  Took on new product development working to integrate tools, processes, and added automation to provide a better customer experience.  Worked heavily with System Center, Hyper-V manager, Fortinet Fortigate 3950B and FortiOS 4.11, PowerShell, Cisco UCS, and others.",
-      "highlights": [
-        "Took initiative to develop tools and re-work systems to make Tier 2 Support teams more efficient, productive, and happy."
       ]
     },
     {
@@ -323,7 +322,7 @@
     },
     {
       "company": "GSI Commerce (now owned by ebay)",
-      "position": "Warehouse Lead / Picker / Packer / Equipment Operator / QC",
+      "position": "Warehouse Lead",
       "website": "http://ebay.com/",
       "startDate": "2006-07-01",
       "endDate": "2009-05-01",
@@ -354,12 +353,15 @@
     },
     {
       "company": "Solectron",
-      "position": "L1 Refurb Tech / L2 Repair Tech / QC",
+      "position": "L2 Repair Tech",
       "website": "https://flex.com/",
       "startDate": "2005-06-01",
       "endDate": "2006-06-01",
-      "summary": "Inspected and repaired various Sanyo/Sprint cellphones down to component level, soldering on a daily basis. I also refurbished Sprint/Sanyo cellphones. Worked as a member of the Quality Control team and also worked with them when I was a tech to make sure the end result was a good quality product.",
-      "highlights": [ ]
+      "summary": "Inspected and repaired various Sanyo/Sprint cellphones down to component level.",
+      "highlights": [
+        "Soldering on a daily basis",
+        "Worked as a member of the Quality Control team"
+      ]
     }
   ]
 }

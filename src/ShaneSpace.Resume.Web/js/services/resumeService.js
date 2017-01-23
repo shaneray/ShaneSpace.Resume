@@ -1,36 +1,34 @@
 ﻿angular.module("resumeService", [])
-    .factory('resume', ['$http', '$rootScope',
-    function ($http, $rootScope) {
+    .factory('resume', ['$http',
+    function ($http, $window) {
         // declare
-        defaultPicture = "/img/user-200.png";
-        resumeUrl = "https://raw.githubusercontent.com/shaneray/resume/master/data/resume.json";
-        resume = null;
-                
-        // methods
-        loadResume = function () {
-            console.log("loading: " + resumeUrl);
-            $http.get(resumeUrl)
-                .then(function (res) {
-                    console.log("loaded: " + resumeUrl);
-                    resume = res.data;
+        this.promise = null;
+        this.resumeJsonUrl = null;
 
-                    // order skills by keyword count for better UI display
-                    resume.skills = resume.skills.sort(function (a, b) { return b.keywords.length - a.keywords.length });
-                    $rootScope.siteName = resume.basics.name + "'s Resume";
-                    $rootScope.resume = resume;
-                });
+        // methods
+        function loadResume(resumeJsonUrl) {
+            console.log("loading: " + resumeJsonUrl);
+            return $http.get(resumeJsonUrl)
+                        .then(function (res) {
+                            this.resumeJsonUrl = resumeJsonUrl;
+
+                            resume = res.data;
+
+                            // order skills by keyword count for better UI display
+                            resume.skills = resume.skills.sort(function (a, b) { return b.keywords.length - a.keywords.length });
+                            return resume;
+                        });
         };
 
-        // init
-        loadResume();
-        $rootScope.resumeUrl = resumeUrl;
-        $rootScope.defaultPicture = defaultPicture;
-
+        // service
         var resumeService = {
-            updateResumeUrl: function (url) {
-                resumeUrl = url;
-                loadResume();
-                $rootScope.resumeUrl = resumeUrl;
+            getData: function (resumeJsonUrl) {
+                // only load if not already loaded or new url provided
+                if (!this.promise || resumeJsonUrl != this.resumeJsonUrl) {
+                    this.promise = loadResume(resumeJsonUrl);
+                }
+
+                return this.promise;
             }
         };
 

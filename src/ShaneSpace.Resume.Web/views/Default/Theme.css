@@ -4,14 +4,18 @@
         display: none;
     }
 }
+.print-only
+{
+    display: none;
+}
 
 /* default theme */
-h1, h2, h3 {
+h1, h2, h3, h4 {
     min-height: inherit;
     margin: 0;
 }
 
-h1, h3 {
+h1, h3, h4 {
     color: #3C6293 !important;
 }
 
@@ -25,12 +29,12 @@ h1 {
     margin-bottom: 14px;
 }
 
-#header h1 {
-    color: black !important;
-}
+    #header h1 {
+        color: black !important;
+    }
 
     #header aside {
-        text-align: right;
+        text-align: center;
         padding: 10px;
     }
 
@@ -54,7 +58,7 @@ h1 {
 
 /* content */
 #content aside {
-    text-align: right;
+    text-align: center;
     padding: 10px;
     background-color: #E6E6E6 !important;
 }
@@ -67,12 +71,44 @@ h1 {
     text-align: center;
 }
 
-#resumeJson {
-    display: none;
-}
-
 #content #profiles .url {
     margin-bottom: 10px;
+}
+
+/* profile icons */
+#content #profiles .github {
+    color: #4078C0 !important;
+}
+
+#content #profiles .stack.exchange {
+    color: #2F96E8 !important;
+}
+
+#content #profiles .stack.overflow {
+    color: #F48024 !important;
+}
+
+#content #profiles .twitter {
+    color: #55ACEE !important;
+}
+
+#content #profiles .reddit {
+    color: #FF4500 !important;
+}
+
+#content #profiles .google.plus {
+    color: #DB4437 !important;
+}
+
+#content #profiles .linkedin {
+    color: #0077B5 !important;
+}
+
+#content #profiles .nuget {
+    content: url(/img/nuget.png);
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 10px;
 }
 
 #content .segment {
@@ -81,7 +117,7 @@ h1 {
 }
 
 #work .position, #education .area {
-    color: black;
+    color: black !important;
 }
 
 #work .date, #education .date {
@@ -95,8 +131,4 @@ h1 {
 
 #footer {
     display: none;
-}
-
-.nuget {
-    content: url(img/nuget.svg)
 }
