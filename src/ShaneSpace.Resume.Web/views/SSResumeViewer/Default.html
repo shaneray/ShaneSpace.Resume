@@ -1,0 +1,53 @@
+﻿<link href="/views/SSResumeViewer/Theme.css" rel="stylesheet" media="screen" />
+
+<div class="desktop">
+    <div class="desktopIcon" ng-repeat="extension in fileSystem.extensions" ng-click="desktopIconClicked($event)">
+        <i class="{{extension.icon}} ui icon"></i>
+        <br />
+        Resume.{{extension.extension}}
+    </div>
+    <div class="window draggable">
+        <div class="titleBar">
+            <i class="ui icon"></i>
+            <span class="title"></span>
+            <span class="applicationName"></span>
+            <div class="windowControls">
+                <div>
+                    <i class="ui icon close"></i>
+                </div>
+                <div>
+                    <i class="fa fa-window-maximize"></i>
+                </div>
+                <div>
+                    <i class="fa fa-window-minimize"></i>
+                </div>
+            </div>
+        </div>
+        <div class="menuBar">
+
+        </div>
+        <div class="content">
+            fake content
+        </div>
+    </div>
+    <div class="taskBar">
+        <div class="taskBarIconWrapper">
+            <div>
+                <i class="ui icon windows"></i>
+            </div>
+        </div>
+        <div class="taskBarIconWrapper">
+            <div>
+                <i class="ui icon circle outline"></i>
+            </div>
+        </div>
+
+        <div id="time" class="taskBarIconWrapper pull-right">
+            <div>
+                <i>{{today | date:"h:mm a"}}</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+

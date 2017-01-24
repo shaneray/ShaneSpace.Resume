@@ -1,0 +1,25 @@
+﻿<link href="Css/Login.css" rel="stylesheet" />
+<div class="desktop">
+    <div class="login">
+        <img ng-src="{{resume.basics.picture || config.defaultPicture}}" />
+        <br />
+        <div class="name">
+            <h1>{{resume.basics.name}}</h1>
+        </div>
+        <br />
+        <a href="#default">
+            <div class="ui button">Standard Resume</div>
+        </a>
+    </div>
+    <a href="#interactive">
+        <div class="altLogin">
+            <img ng-src="{{config.defaultPicture}}" class="pull-left" />
+            <div class="name">
+                {{resume.basics.name}}
+            </div>
+            <div class="description">
+                Interactive Resume
+            </div>
+        </div>
+    </a>
+</div>

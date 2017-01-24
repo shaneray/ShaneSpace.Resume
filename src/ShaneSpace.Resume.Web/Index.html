@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" ng-app="resume" ng-controller="DefaultController">
+<head>
+    <base href="/">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="{{resume.basics.picture || config.defaultPicture}}">
+    <meta name="apple-mobile-web-app-title" content="{{siteName}}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title ng-bind="siteName">My Resume</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="My Resume" />
+    <meta property="og:type" content="article" />
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Site -->
+    <script src="js/app.js"></script>
+
+    <!-- Site Controllers -->
+    <script src="js/controllers/defaultController.js"></script>
+    <script src="js/controllers/interactiveController.js"></script>
+    <script src="js/controllers/standardController.js"></script>
+
+    <!-- Site Services -->
+    <script src="js/services/config.js"></script>
+    <script src="js/services/windowManager.js"></script>
+    <script src="js/services/resumeService.js"></script>
+
+    <!-- Site Stylesheets -->
+    <link href="views/default/theme.css" rel="stylesheet" />
+    <link href="css/print.css" rel="stylesheet" media="print" />
+</head>
+<body>
+    <div id="settings" class="ui basic modal">
+        <div class="ui icon header">
+            <i class="setting icon"></i>
+            Resume Settings
+        </div>
+        <div class="content">
+            JSON Source:
+            <div class="ui input fluid">
+                <input type="text" id="resumeJsonSetting" value="{{config.resumeJsonUrl}}" />
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui red cancel button">
+                <i class="remove icon"></i>
+                Cancel
+            </div>
+            <div class="ui green ok button" ng-click="updateResumeUrl()">
+                <i class="checkmark icon"></i>
+                Save
+            </div>
+        </div>
+    </div>
+
+    <div id="customView">
+        <div ng-view>
+            <!-- this is where theme templates will be loaded -->
+        </div>
+    </div>
+
+    <div id="defaultView" style="display:none;" ng-include="'/views/default/default.html'">
+        <!-- this is where the default print view will be loaded -->
+    </div>
+</body>
+</html>

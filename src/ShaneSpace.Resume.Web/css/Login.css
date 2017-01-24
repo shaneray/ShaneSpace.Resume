@@ -1,0 +1,69 @@
+﻿#defaultView {
+    display: none;
+}
+
+#customView > div {
+    height: 100%;
+}
+
+.html, body, body > div {
+    height: 100%;
+}
+
+.login {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+    .login > img {
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    .login .name h1 {
+        color: white !important;
+        font-weight: normal !important;
+    }
+
+    .login button {
+        width: 120px;
+        color: white !important;
+        font-weight: normal !important;
+        background-color: rgb(41,84,116) !important;
+    }
+
+.altLogin {
+    width: 100%;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+    .altLogin > img {
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+    .altLogin .name {
+        color: white;
+        padding-left: 60px;
+    }
+
+    .altLogin .description {
+        color: #7E8490;
+        padding-left: 60px;
+    }
+
+.desktop {
+    display: table;
+    background-color: white !important;
+    background: url(/img/Windows-10-wallpaper.jpg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
