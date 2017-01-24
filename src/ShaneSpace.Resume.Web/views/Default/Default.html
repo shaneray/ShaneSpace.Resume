@@ -62,12 +62,12 @@
                 <h3>Resume</h3>
             </aside>
             <div class="col-sm-10">
-                <div class="print-only ui segment">You are viewing the static version of this resume intended for pint.  An interactive version is available online at: {{config.resumeUrl}}.</div>
+                <div class="print-only ui info message">You are viewing the static version of this resume intended for pint.  An interactive version is available online at: <a href="{{config.resumeUrl}}">{{config.resumeUrl}}</a>.</div>
                 This resume was created using Angular JS, HTML, CSS and a resume.json file.  If you find any issues, please report them via github.<br /><br />
-                Resume JSON: <span class="hidden-print"><a href="{{config.resumeJsonUrl}}">resume.json</a>.</span><span class="print-only">{{config.resumeJsonUrl}}</span><br />
-                JSON schema: <span class="hidden-print"><a href="http://json.schemastore.org/resume">http://json.schemastore.org/resume</a>.</span><span class="print-only">http://json.schemastore.org/resume</span><br />
-                The source code for this resume can be found on GitHub <span class="hidden-print"><a href="{{config.resumeSourceUrl}}">{{config.resumeSourceUrl}}</a>.</span><span class="print-only">{{config.resumeSourceUrl}}</span>
-</div>
+                Resume JSON: <a href="{{config.resumeJsonUrl}}">resume.json</a>.<br />
+                JSON schema: <a href="http://json.schemastore.org/resume">http://json.schemastore.org/resume</a>.<br />
+                The source code for this resume can be found on GitHub <a href="{{config.resumeSourceUrl}}">{{config.resumeSourceUrl}}</a>.
+            </div>
         </section>
 
         <section id="skills" class="row">
@@ -162,6 +162,29 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="row">
+            <aside class="col-sm-2">
+                <h3>References</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div ng-repeat="reference in resume.references">
+                        <div class="clearfix" ng-if="$index % 2 == 0"></div>
+
+                        <div class="col-sm-6 segment">
+                            <h3 class="position">
+                                {{reference.name}}
+                            </h3>
+                            <h4 class="company">
+                                {{reference.reference}}
+                            </h4>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

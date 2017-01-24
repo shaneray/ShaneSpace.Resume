@@ -138,7 +138,20 @@
     }
   ],
   "publications": [ ],
-  "references": [ ],
+  "references": [
+    {
+      "name": "Phil Scott (Senior Architect)",
+      "reference": "Awaiting response...."
+    },
+    {
+      "name": "Ashish Arora (Development Manager)",
+      "reference": "Awaiting response...."
+    },
+    {
+      "name": "James Harrelson (Development Manager)",
+      "reference": "Awaiting response...."
+    }
+  ],
   "skills": [
     {
       "name": "Web Development",
