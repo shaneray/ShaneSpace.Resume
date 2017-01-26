@@ -187,16 +187,16 @@ h1 {
     margin-bottom: 14px;
 }
 
-#work .position, #education .area {
+#content #work .position, #education .area {
     color: black !important;
 }
 
-#work .date, #education .date {
+#content #work .date, #education .date {
     font-size: small;
     color: gray;
 }
 
-#education .courses {
+#content #education .courses {
     margin-bottom: 14px;
 }
 
