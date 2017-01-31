@@ -1,0 +1,24 @@
+﻿#vsCodeContentWrapper {
+    height: calc(100% - 23px);
+    overflow: auto;
+    padding-left: 50px;
+    background-color: #333333 !important;
+    color: #75CEED;
+}
+
+#contentWrapper section {
+    display: none;
+}
+
+#vsCodeContent {
+    height: 100%;
+    background-color: #252526;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#vsCodeFooter {
+    background-color: #68217A;
+    color: white;
+    padding: 2px;
+}

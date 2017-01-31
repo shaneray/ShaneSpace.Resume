@@ -6,28 +6,28 @@
         <br />
         Resume.{{extension.extension}}
     </div>
-    <div class="window draggable">
+    <div class="window draggable {{window.windowState}} {{window.application.name}}" id="{{window.windowId}}" ng-class="{'active': window.active}" ng-repeat="window in windows" ng-mousedown="windowClicked(window.windowId)" style="z-index: {{window.zIndex}}; top: {{window.position.top}}px; left: {{window.position.left}}px;">
         <div class="titleBar">
-            <i class="ui icon"></i>
-            <span class="title"></span>
-            <span class="applicationName"></span>
+            <i class="ui icon {{window.application.icon}}"></i>
+            <span class="title">{{window.fileName}}</span>
+            <span class="applicationName">{{window.application.name}}</span>
             <div class="windowControls">
-                <div>
+                <div ng-click="closeWindow(window.windowId);">
                     <i class="ui icon close"></i>
                 </div>
-                <div>
+                <div ng-click="setWindowState(window.windowId, 'maximized');">
                     <i class="fa fa-window-maximize"></i>
                 </div>
-                <div>
+                <div ng-click="setWindowState(window.windowId, 'minimized');">
                     <i class="fa fa-window-minimize"></i>
                 </div>
             </div>
         </div>
         <div class="menuBar">
-
+            <span>File</span>
         </div>
-        <div class="content">
-            fake content
+        <div class="content" ng-include="window.application.view">
+            
         </div>
     </div>
     <div class="taskBar">
@@ -39,6 +39,12 @@
         <div class="taskBarIconWrapper">
             <div>
                 <i class="ui icon circle outline"></i>
+            </div>
+        </div>
+
+        <div class="taskBarIconWrapper application" ng-repeat="window in windows" ng-click="windowClicked(window.windowId)" ng-class="{'active': window.active}">
+            <div>
+                <i class="ui icon {{window.application.icon}}"></i> {{window.fileName}}
             </div>
         </div>
 
