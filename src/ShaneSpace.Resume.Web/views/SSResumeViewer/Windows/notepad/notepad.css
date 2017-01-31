@@ -3,3 +3,23 @@
     padding-left: 4px;
     padding-right: 4px;
 }
+
+.Notepad h3, .Notepad h4, .Notepad a, .Notepad div {
+    color: black !important;
+    font-weight: normal !important;
+    font-size: 14px;
+}
+
+.Notepad .content h3::before, .Notepad .content h3::after {
+    content: "==============================================================";
+    display: block;
+}
+
+.Notepad .content h4::before, .Notepad .content h4::after {
+    content: "--------------------------------------------------------------";
+    display: block;
+}
+
+.Notepad .keyword::before {
+    content: "- ";
+}

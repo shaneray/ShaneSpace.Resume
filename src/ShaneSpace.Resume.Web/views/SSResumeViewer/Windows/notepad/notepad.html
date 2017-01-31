@@ -1,2 +1,127 @@
 ﻿<link href="/views/SSResumeViewer/Windows/notepad/notepad.css" rel="stylesheet" />
-This is notepad - under construction
+
+<section>
+    <h3>Contact</h3>
+    <div class="email">
+        Email: <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a>
+    </div>
+    <div class="website">
+        Website: <a href="{{resume.basics.website}}">{{resume.basics.website}}</a>
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>About</h3>
+    <div>
+        {{resume.basics.summary}}
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Resume</h3>
+    <div>
+        This resume was created using Angular JS, HTML, CSS and a resume.json file.  If you find any issues, please report them via github.<br /><br />
+        Resume JSON: <a href="{{config.resumeJsonUrl}}">resume.json</a>.<br />
+        JSON schema: <a href="http://json.schemastore.org/resume">http://json.schemastore.org/resume</a>.<br />
+        The source code for this resume can be found on GitHub <a href="{{config.resumeSourceUrl}}">{{config.resumeSourceUrl}}</a>.
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Skills</h3>
+    <div ng-repeat="skill in resume.skills">
+        <div>
+            <div class="name">
+                <h4>{{skill.name}}</h4>
+            </div>
+            <div class="keyword" ng-repeat="keyword in skill.keywords">{{keyword}}</div>
+        </div>
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Work</h3>
+    <div ng-repeat="work in resume.work">
+        <h4>
+            {{work.position}}<br />
+            {{work.company}} ({{work.startDate | date: "MM/yyyy"}} — {{work.endDate | date: "MM/yyyy" || "present"}})<br />
+            <a href="{{work.website}}">{{work.website}}</a>
+        </h4>
+
+        <div>
+            {{work.summary}}<br />
+            <br />
+            Highlights
+            <div class="keyword" ng-repeat="highlight in work.highlights">{{highlight}}</div>
+        </div>
+        <br />
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Education</h3>
+    <div ng-repeat="education in resume.education">
+        <h4>
+            <span class="area">
+                {{education.area}} @
+            </span>
+            <span class="institution">{{education.institution}}</span>
+            <span class="date">
+                ({{education.startDate | date: "MM/yyyy"}} — {{education.endDate | date: "MM/yyyy" || "present"}})
+            </span>
+        </h4>
+        <div class="studyType">
+            {{education.studyType}}
+        </div>
+        <div class="courses">
+            Courses<br />
+            <div class="keyword" ng-repeat="course in education.courses">
+                {{course}}
+            </div>
+        </div>
+        <br />
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>References</h3>
+    <div ng-repeat="reference in resume.references">
+        <div>
+            <h4 class="position">
+                {{reference.name}}
+            </h4>
+            <div class="reference">
+                {{reference.reference}}
+            </div>
+        </div>
+        <br />
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Profiles</h3>
+    <div ng-repeat="profile in resume.basics.profiles">
+        <a href="{{profile.url}}">{{profile.network}} : {{profile.username}}</a><br />
+    </div>
+</section>
+<br />
+
+<section>
+    <h3>Languages</h3>
+    <div ng-repeat="language in resume.languages">
+        <div class="language">
+            <strong>{{language.language}}</strong>
+        </div>
+        <div class="fluency">
+            {{language.fluency}}
+        </div>
+    </div>
+</section>
+<br />

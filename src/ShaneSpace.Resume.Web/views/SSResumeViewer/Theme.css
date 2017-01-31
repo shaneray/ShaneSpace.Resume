@@ -110,8 +110,8 @@
 
 .window {
     position: absolute !important;
-    width: 75%;
-    height: 75%;
+    width: 50%;
+    height: 50%;
     background-color: white;
     color: black;
     border: 2px solid #ffffff !important;
@@ -143,6 +143,7 @@
 
         .window .titleBar span {
             position: relative;
+            left: 50px;
             top: 5px;
         }
 

@@ -1,24 +1,97 @@
 ﻿#vsCodeContentWrapper {
     height: calc(100% - 23px);
     overflow: auto;
-    padding-left: 50px;
     background-color: #333333 !important;
     color: #75CEED;
 }
 
-#contentWrapper section {
-    display: none;
+#vsCodeSideBar {
+    float: left;
+    width: 50px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #ADADAD;
+    padding-top: 10px;
 }
 
+    #vsCodeSideBar i {
+        margin-bottom: 20px;
+    }
+
+        #vsCodeSideBar i:hover {
+            color: white;
+        }
+
 #vsCodeContent {
+    float: left;
+    width: calc(100% - 50px);
     height: 100%;
     background-color: #252526;
-    padding-left: 4px;
-    padding-right: 4px;
 }
 
 #vsCodeFooter {
     background-color: #68217A;
     color: white;
-    padding: 2px;
+    padding: 2px 10px 2px 10px;
+    font-size: .85em !important;
+    height: 23px;
+}
+
+    #vsCodeFooter .problems {
+        float: left;
+    }
+
+    #vsCodeFooter .feedback,
+    #vsCodeFooter .line,
+    #vsCodeFooter .indent,
+    #vsCodeFooter .encoding,
+    #vsCodeFooter .eol,
+    #vsCodeFooter .language {
+        float: right;
+    }
+
+    #vsCodeFooter div {
+        padding: 0 4px 0 4px;
+    }
+
+    #vsCodeFooter > div:hover {
+        background-color: rgba(255, 255, 255, .2);
+    }
+
+
+pre {
+    color: #D4D4D4;
+    font-family: monospace;
+    padding: 0.5em;
+    line-height: 0;
+    counter-reset: line;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    word-break: break-word;
+}
+
+    pre code {
+        display: block;
+        line-height: 1.5rem;
+    }
+
+        pre code .property {
+            color: #9CDCFE;
+        }
+
+        pre code .value {
+            color: #CE9178;
+        }
+
+        pre code:before {
+            counter-increment: line;
+            content: counter(line);
+            display: inline-block;
+            padding: 0 .5em;
+            margin-right: .5em;
+            margin-left: .5em;
+        }
 }
