@@ -12,8 +12,8 @@
     "label": "Senior Software Developer",
     "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
     "email": "shane.ray87@gmail.com",
-    "phone": "(502) 689-9950",
-    "website": "https://shanespaceblog.azurewebsites.net/",
+    "phone": "(502) 541-6445",
+    "website": "https://ShaneSpace.net",
     "summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy. Highly accomplished and motivated professional with a proven track record of being a resourceful problem-solver including excellent communication skills, incredible stamina and an eye for perfect detail.  Consistently recognized for providing rapid and cost-effective resolutions to challenging technical issues.",
     "location": {
       "address": "4907 Woodsend Rd",
@@ -276,6 +276,16 @@
   ],
   "volunteer": [ ],
   "work": [
+    {
+      "company": "Cafe Press",
+      "position": "Senior Software Developer",
+      "website": "https://cafepress.com",
+      "startDate": "2017-03-06",
+      "endDate": "",
+      "summary": "Responsible for partnering and interactacting with technical and business contacts to transform, enhance, and build efficiencies.",
+      "highlights": [
+      ]
+    },
     {
       "company": "Birch Communications",
       "position": "Senior Software Developer",

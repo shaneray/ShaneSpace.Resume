@@ -14,6 +14,7 @@
                     .then(function (resume) {
                         // add resume to scope
                         $scope.resume = resume;
+                        $scope.resumeJson = JSON.stringify($scope.resume, undefined, 4).split('\n');
 
                         // set page title
                         $scope.siteName = resume.basics.name + "'s Resume";

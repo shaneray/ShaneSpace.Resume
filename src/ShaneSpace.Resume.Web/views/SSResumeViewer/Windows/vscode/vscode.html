@@ -1,9 +1,40 @@
 ﻿<link href="/views/SSResumeViewer/Windows/vscode/vscode.css" rel="stylesheet" />
 <div id="vsCodeContentWrapper">
+    <div id="vsCodeSideBar">
+        <i class="fa fa-files-o"></i>
+        <i class="ui icon search"></i>
+        <i class="ui icon fork"></i>
+        <i class="ui icon bug"></i>
+        <i class="ui icon qrcode"></i>
+    </div>
     <div id="vsCodeContent">
-        This is Visual Studio Code  - under construction
+        <pre>
+            <code ng-repeat="line in resumeJson track by $index"><span ng-if='line.indexOf("\":") < 0'><span ng-class='{"value": line.indexOf("\"") >= 0}'>{{line}}</span></span><span ng-if='line.indexOf("\":") >= 0'><span class="property">{{line.split('":')[0]}}</span>:<span class="value">{{line.split('":')[1]}}</span></span></code>
+        </pre>
     </div>
 </div>
+
 <div id="vsCodeFooter">
-    footer text
+    <div class="problems">
+        <i class="ui icon remove circle"></i>0
+        <i class="ui icon warning sign"></i>0
+    </div>
+    <div class="feedback">
+        <i class="ui icon smile"></i>
+    </div>
+    <div class="language">
+        Plain Text
+    </div>
+    <div class="eol">
+        CRLF
+    </div>
+    <div class="encoding">
+        UTF-8
+    </div>
+    <div class="indent">
+        Spaces: 4
+    </div>
+    <div class="line">
+        Ln 1, Col 1
+    </div>
 </div>

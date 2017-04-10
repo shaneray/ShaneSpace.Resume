@@ -110,12 +110,12 @@
 
 .window {
     position: absolute !important;
-    width: 75%;
-    height: 75%;
+    width: 50%;
+    height: 50%;
     background-color: white;
     color: black;
     border: 2px solid #ffffff !important;
-    min-width: 300px;
+    min-width: 250px;
     min-height: 300px;
 }
 
@@ -141,9 +141,16 @@
         text-align: center;
     }
 
-        .window .titleBar span {
-            position: relative;
+        .window .titleBar .windowTitle {
+            position: absolute;
+            white-space: nowrap;
             top: 5px;
+            text-align: center;
+            width: 100%;
+            padding-right: 135px;
+            padding-left: 25px;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         .window .titleBar .applicationName::before {

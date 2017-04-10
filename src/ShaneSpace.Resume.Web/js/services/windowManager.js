@@ -16,11 +16,7 @@
                     {
                         extension: "json",
                         icon: "file code outline"
-                    },
-                    {
-                        extension: "other",
-                        icon: "file"
-                    },
+                    }
                 ],
                 applications: [
                     {
