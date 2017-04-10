@@ -1,403 +1,405 @@
 {
-  "awards": [
-    {
-      "title": "Excellence Award",
-      "date": "2012-01-01",
-      "awarder": "Cbeyond",
-      "summary": "Given in recognition of outstanding delivery of our Total Cloud Data Center provisioning and network automation solution."
-    }
-  ],
-  "basics": {
-    "name": "Shane Ray",
-    "label": "Senior Software Developer",
-    "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
-    "email": "shane.ray87@gmail.com",
-    "phone": "(502) 541-6445",
-    "website": "https://ShaneSpace.net",
-    "summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy. Highly accomplished and motivated professional with a proven track record of being a resourceful problem-solver including excellent communication skills, incredible stamina and an eye for perfect detail.  Consistently recognized for providing rapid and cost-effective resolutions to challenging technical issues.",
-    "location": {
-      "address": "4907 Woodsend Rd",
-      "city": "Louisville",
-      "countryCode": "US",
-      "postalCode": "40229",
-      "region": "Kentucky"
-    },
-    "profiles": [
-      {
-        "network": "Github",
-        "username": "ShaneRay",
-        "url": "https://github.com/shaneray"
-      },
-      {
-        "network": "NuGet",
-        "username": "ShaneRay",
-        "url": "https://www.nuget.org/profiles/shaneray"
-      },
-      {
-        "network": "Stack Exchange",
-        "username": "user:6755216",
-        "url": "https://stackexchange.com/users/6755216/shane-ray"
-      },
-      {
-        "network": "Stack Overflow",
-        "username": "user:5203905",
-        "url": "https://stackoverflow.com/users/5203905/shane-ray"
-      },
-      {
-        "network": "Developer Story",
-        "username": "user:5203905",
-        "url": "http://stackoverflow.com/story/shaneray"
-      },
-      {
-        "network": "Slack",
-        "username": "Shane Ray",
-        "url": "https://shanespacedev.slack.com/"
-      },
-      {
-        "network": "Twitter",
-        "username": "ShaneRay87",
-        "url": "https://twitter.com/shaneray87"
-      },
-      {
-        "network": "Reddit",
-        "username": "ShaneRay87",
-        "url": "https://www.reddit.com/user/shaneray87/"
-      },
-      {
-        "network": "Google Plus",
-        "username": "Shane Ray",
-        "url": "https://plus.google.com/u/0/109176240380352789446"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "ShaneRay",
-        "url": "https://www.linkedin.com/in/shaneray"
-      }
-    ]
-  },
-  "education": [
-    {
-      "institution": "Bullitt Central",
-      "area": "Student",
-      "studyType": "General Studies",
-      "startDate": "2001-08-01",
-      "endDate": "2005-06-01",
-      "courses": [
-        "Auto Mechanics",
-        "Computer Science",
-        "Future Business Leaders of America"
-      ]
-    },
-    {
-      "institution": "Pleasure Ridge Park",
-      "area": "Student",
-      "studyType": "General Studies",
-      "startDate": "2000-08-01",
-      "endDate": "2001-06-01",
-      "courses": [
-        "Electronics 101",
-        "Robotics Club",
-        "Carpentry/Wood working"
-      ]
-    }
-  ],
-  "interests": [
-    {
-      "name": "Software Development",
-      "keywords": [ ]
-    },
-    {
-      "name": "Cloud Computing",
-      "keywords": [ ]
-    },
-    {
-      "name": "Systems Integration and Automation",
-      "keywords": [ ]
-    },
-    {
-      "name": "Electronics",
-      "keywords": [ ]
-    },
-    {
-      "name": "Space",
-      "keywords": [ ]
-    },
-    {
-      "name": "Ferrets",
-      "keywords": [ ]
-    },
-    {
-      "name": "Bourbon",
-      "keywords": [ ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "publications": [ ],
-  "references": [
-    {
-      "name": "Phil Scott (Senior Architect)",
-      "reference": "Shane is a tireless worker and learner. He not only looks to constantly improve his work, but also take what he's learned and share it with others."
-    },
-    {
-      "name": "Ashish Arora (Manager Software Development)",
-      "reference": "Shane is an excellent software developer. He takes a great deal of pride in what he does and he works very hard to achieve the exact results that the customer is looking for. He has worked many late hours as part of my development team just to make certain that a delivered project is exactly what the customer wanted. Shane is passionate about writing code and solving complex problems through development of creative and innovative software. He is conceptually very strong and stays up-to-date with the latest techniques and tools related to software development."
-    },
-    {
-      "name": "Shannon Callaway (Cloud Technology Strategist)",
-      "reference": "Shane was a fantastic employee. He was an extremely dedicated worker who consistently worked to improve his skill set and rise to new challenges. He was personable, dependable, and able to quickly adapt to new situations."
-    },
-    {
-      "name": "Reference Contact Information",
-      "reference": "Contact information for the listed references are available upon request."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "MVC 1.0 - 5.0",
-        "ASP.NET Web API 1.0 - 2.2",
-        "ASP.NET WebForms",
-        "Grunt / Gulp / Bower",
-        "HTML5",
-        "Angular",
-        "jQuery",
-        "node",
-        "C#",
-        "LINQ",
-        "JSON",
-        "XML",
-        "REST"
-      ]
-    },
-    {
-      "name": "Cloud Services",
-      "level": "Master",
-      "keywords": [
-        "Hyper-V",
-        "System Center",
-        "VMware",
-        "vCenter",
-        "Network Automation",
-        "Windows Server"
-      ]
-    },
-    {
-      "name": "Data Storage",
-      "level": "Master",
-      "keywords": [
-        "SQL Server",
-        "RavenRB",
-        "MongoDB",
-        "RabbitMQ",
-        "Redis"
-      ]
-    },
-    {
-      "name": "Source Control",
-      "level": "Master",
-      "keywords": [
-        "Git",
-        "TFS",
-        "SourceGear Vault",
-        "Atlassian Stash Adminstration",
-        "GitHub Administration"
-      ]
-    },
-    {
-      "name": "DevOps",
-      "level": "Master",
-      "keywords": [
-        "TeamCity",
-        "Octopus Deploy",
-        "AppVeyor",
-        "GitHub",
-        "Nuget Package Administration",
-        "Visual Studio Team Services"
-      ]
-    },
-    {
-      "name": "Backend",
-      "level": "Master",
-      "keywords": [
-        "MassTransit",
-        "TopShelf",
-        "RabbitMQ",
-        "Hangfire"
-      ]
-    },
-    {
-      "name": "Testing",
-      "level": "Master",
-      "keywords": [
-        "xUnit",
-        "nUnit",
-        "MSTest",
-        "Benchmark.net"
-      ]
-    },
-    {
-      "name": "Logging",
-      "level": "Master",
-      "keywords": [
-        "Serilog",
-        "Log4Net",
-        "SEQ"
-      ]
-    },
-    {
-      "name": "Other",
-      "level": "Master",
-      "keywords": [
-        "EntityFramework",
-        "AutoMapper",
-        "Autofac",
-        "SimpleInjector",
-        "Ninject",
-        "Swagger",
-        "Swashbuckle",
-        "PowerShell",
-        "Mediatr",
-        "Tooling",
-        "Extensions",
-        "Cake Build",
-        "Open Source Software",
-        "CQRS",
-        "DDD",
-        "OWIN"
-      ]
-    }
-  ],
-  "volunteer": [ ],
-  "work": [
-    {
-      "company": "Cafe Press",
-      "position": "Senior Software Developer",
-      "website": "https://cafepress.com",
-      "startDate": "2017-03-06",
-      "endDate": "",
-      "summary": "Responsible for partnering and interactacting with technical and business contacts to transform, enhance, and build efficiencies.",
-      "highlights": [
-      ]
-    },
-    {
-      "company": "Birch Communications",
-      "position": "Senior Software Developer",
-      "website": "https://birch.com/",
-      "startDate": "2014-01-01",
-      "endDate": "2017-01-01",
-      "summary": "Helped lead efforts of migration of companywide primary B/OSS legacy WCF client / server application to Web API and AngularJS system.",
-      "highlights": [
-        "Maintained and improved primary business Portal used by both internal employees and customers utilizing C#, ASP.Net 4, HTML5, CSS3 and JavaScript / jQuery.",
-        "Used Git Flow development process via Atlassian JIRA and Stash.",
-        "Implemented an automated continous delivery system using TeamCity, Jenkins, and Octopus Deploy.",
-        "Worked closely with Senior Architect to establish best practices for REST API resources, and documentation via Swagger.",
-        "Worked with key business stakeholders during acquisition for knowledge share and system integration.",
-        "Managed, Onboarded, and colaborated with geographically diverse teams to ensure project delivery dates were met.",
-        "Conducted development continuous education, and training on new policies and technology such as unit testing, GitFlow workflow, message queuing, and general developer productivity tips",
-        "Performed code reviews on committed line-of-business code to ensure standards and quality, security, and performance were met.",
-        "Worked with offshore development teams to find gaps in knowledge and documentation and updated internal documentation to fill those gaps.",
-        "Focused on security and performance."
-      ]
-    },
-    {
-      "company": "Birch Communications (formerly Cbeyond)",
-      "position": "Cloud Engineer",
-      "website": "https://birch.com/",
-      "startDate": "2013-01-01",
-      "endDate": "2013-12-01",
-      "summary": "Responsible for engineering new products and services.  Leveraging current and new technologies to provide cutting edge new and exciting products for our customers.  Also responsible for refreshing current offering and products to stay in tune with today's market.",
-      "highlights": [
-        "Developed and maintained many APIs and tools for fellow cloud engineers.",
-        "Architected, developed, and maintained network management API.  This API provided provisioning, management, logging, and data retrieval for multiple of the following network devices: Fortinet Forigate, Juniper NetScreen, Cisco ASA, Cisco NSX, and Palo Alto.",
-        "Architected, developed, and maintained VMware vSphere/VMware orchestrator management API.  This API provided provisioning, management, logging, and data retrieval for our VMware virtual machines."
-      ]
-    },
-    {
-      "company": "Cbeyond Cloud Services",
-      "position": "Cloud Application Management Engineer",
-      "website": "https://cbeyond.com/",
-      "startDate": "2012-03-01",
-      "endDate": "2013-01-01",
-      "summary": "Responsible for creating and re-defining processes for support staff.  Responsible for Tier 3 Support escalations.  Continued to develop tools and re-work systems to make Tier 2 Support teams and Tier 3 support more efficient, productive, and happy.  Took on new product development working to integrate tools, processes, and added automation to provide a better customer experience.  Worked heavily with System Center, Hyper-V manager, Fortinet Fortigate 3950B and FortiOS 4.11, PowerShell, Cisco UCS, and others.",
-      "highlights": [
-        "Took initiative to develop tools and re-work systems to make Tier 2 Support teams more efficient, productive, and happy."
-      ]
-    },
-    {
-      "company": "Cbeyond Cloud Services",
-      "position": "Cloud Services Engineer",
-      "website": "https://cbeyond.com/",
-      "startDate": "2011-07-01",
-      "endDate": "2012-03-01",
-      "summary": "Tier 2 Support Engineer for cloud hosting products including but not limited to IIS, WebDAV, FTP, MSSQL, MySQL, dedicated and virtual hosted servers.",
-      "highlights": [
-        "Took initiative to develop tools and re-work systems to make Tier 2 Support teams more efficient, productive, and happy."
-      ]
-    },
-    {
-      "company": "ICT/Sykes",
-      "position": "Apple CPU Tech Support",
-      "website": "https://sykes.com/",
-      "startDate": "2009-12-01",
-      "endDate": "2011-04-01",
-      "summary": "Answered calls for AppleCare CPU tech support. I was responsible for asking relevant probing questions and analyzing the information the customer provided.  Then I would isolate the customers issue to hardware or software and offer the best possible resolution.",
-      "highlights": [
-        "I provided solutions to many networking, security, and DNS issues to maintain productivity on the call floor.  Also made some tools to help advisors through their day to increase productivity and limit distractions.  I have also identified many security holes and provided patches or fixes for them.",
-        "SykesLinks – Custom home page that puts all advisor tools in one place.  Also includes a simplified Kronos (time card).  This also gives the supervisor easy access to see which Kronos code that the advisors were in.",
-        "Apple Support Sites – The apple support websites that advisors use often suffered from a DNS issue that caused loading times to reach 5+ min.  Identified problems, found solution and provided patch.",
-        "Provided execlent customer service and often recieved support member of the week based on customer satisfaction serveys.",
-        "Worked with many different aspects of the Apple computer.  Such as, but not limited to: Email, Networking Issues (wired, wireless), and Hardware/Software Issues"
-      ]
-    },
-    {
-      "company": "GSI Commerce (now owned by ebay)",
-      "position": "Warehouse Lead",
-      "website": "http://ebay.com/",
-      "startDate": "2006-07-01",
-      "endDate": "2009-05-01",
-      "summary": "Worked with associates to maintain smooth shipping procedures. Some daily duties include: Resolved any SKU and product discrepancies and find resolution to daily order issues. Worked with distribution partners to coordinate timely pick-up and delivery of product in a consistent manner. Picked, Packed, and Replenished Products. Managed shipping dock. Coordinated World Ship items.",
-      "highlights": [
-        "Led daily standups and coordinated prioritization of work",
-        "Work with associates to maintain smooth shipping procedures.",
-        "Responsible for much of 2nd shift maintenance.",
-        "Responsible for most of 2nd shift IT troubleshooting and repair.",
-        "Utilized AS400 proficiently on a daily basis, also proficient with RF Scanner.",
-        "Certified to drive, all equipment including but not limited to: Forklift, Reach Truck, Cherry Picker, Auto Pallet Jacks, Dock Stocker.",
-        "HAZMAT Certified",
-        "Worked with Upper management to and engineers to develop smoother procedures to maximize productivity."
-      ]
-    },
-    {
-      "company": "Elite Online Design",
-      "position": "Software Developer",
-      "website": "http://eliteonlinedesign.net/",
-      "startDate": "2006-09-01",
-      "endDate": "2007-09-01",
-      "summary": "Developed and edited many complex websites with ASP.NET, C#, PHP, MySQL, HTML, CSS and JavaScript.",
-      "highlights": [
-        "Designed Graphics to make the overall site design more appealing.",
-        "Optimized Code and graphics for faster loading.",
-        "Customer Relations, to make sure the customer gets what they need when they needed it."
-      ]
-    },
-    {
-      "company": "Solectron",
-      "position": "L2 Repair Tech",
-      "website": "https://flex.com/",
-      "startDate": "2005-06-01",
-      "endDate": "2006-06-01",
-      "summary": "Inspected and repaired various Sanyo/Sprint cellphones down to component level.",
-      "highlights": [
-        "Soldering on a daily basis",
-        "Worked as a member of the Quality Control team"
-      ]
-    }
-  ]
+	"awards": [
+		{
+			"title": "Excellence Award",
+			"date": "2012-01-01",
+			"awarder": "Cbeyond",
+			"summary": "Given in recognition of outstanding delivery of our Total Cloud Data Center provisioning and network automation solution."
+		}
+	],
+	"basics": {
+		"name": "Shane Ray",
+		"label": "Senior Software Developer",
+		"picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
+		"email": "shane.ray87@gmail.com",
+		"phone": "(502) 541-6445",
+		"website": "https://ShaneSpace.net",
+		"summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy. Highly accomplished and motivated professional with a proven track record of being a resourceful problem-solver including excellent communication skills, incredible stamina and an eye for perfect detail.  Consistently recognized for providing rapid and cost-effective resolutions to challenging technical issues.",
+		"location": {
+			"address": "4907 Woodsend Rd",
+			"city": "Louisville",
+			"countryCode": "US",
+			"postalCode": "40229",
+			"region": "Kentucky"
+		},
+		"profiles": [
+			{
+				"network": "Github",
+				"username": "ShaneRay",
+				"url": "https://github.com/shaneray"
+			},
+			{
+				"network": "NuGet",
+				"username": "ShaneRay",
+				"url": "https://www.nuget.org/profiles/shaneray"
+			},
+			{
+				"network": "Stack Exchange",
+				"username": "user:6755216",
+				"url": "https://stackexchange.com/users/6755216/shane-ray"
+			},
+			{
+				"network": "Stack Overflow",
+				"username": "user:5203905",
+				"url": "https://stackoverflow.com/users/5203905/shane-ray"
+			},
+			{
+				"network": "Developer Story",
+				"username": "user:5203905",
+				"url": "http://stackoverflow.com/story/shaneray"
+			},
+			{
+				"network": "Slack",
+				"username": "Shane Ray",
+				"url": "https://shanespacedev.slack.com/"
+			},
+			{
+				"network": "Twitter",
+				"username": "ShaneRay87",
+				"url": "https://twitter.com/shaneray87"
+			},
+			{
+				"network": "Reddit",
+				"username": "ShaneRay87",
+				"url": "https://www.reddit.com/user/shaneray87/"
+			},
+			{
+				"network": "Google Plus",
+				"username": "Shane Ray",
+				"url": "https://plus.google.com/u/0/109176240380352789446"
+			},
+			{
+				"network": "LinkedIn",
+				"username": "ShaneRay",
+				"url": "https://www.linkedin.com/in/shaneray"
+			}
+		]
+	},
+	"education": [
+		{
+			"institution": "Bullitt Central",
+			"area": "Student",
+			"studyType": "General Studies",
+			"startDate": "2001-08-01",
+			"endDate": "2005-06-01",
+			"courses": [
+				"Auto Mechanics",
+				"Computer Science",
+				"Future Business Leaders of America"
+			]
+		},
+		{
+			"institution": "Pleasure Ridge Park",
+			"area": "Student",
+			"studyType": "General Studies",
+			"startDate": "2000-08-01",
+			"endDate": "2001-06-01",
+			"courses": [
+				"Electronics 101",
+				"Robotics Club",
+				"Carpentry/Wood working"
+			]
+		}
+	],
+	"interests": [
+		{
+			"name": "Software Development",
+			"keywords": []
+		},
+		{
+			"name": "Cloud Computing",
+			"keywords": []
+		},
+		{
+			"name": "Systems Integration and Automation",
+			"keywords": []
+		},
+		{
+			"name": "Electronics",
+			"keywords": []
+		},
+		{
+			"name": "Space",
+			"keywords": []
+		},
+		{
+			"name": "Ferrets",
+			"keywords": []
+		},
+		{
+			"name": "Bourbon",
+			"keywords": []
+		}
+	],
+	"languages": [
+		{
+			"language": "English",
+			"fluency": "Native speaker"
+		}
+	],
+	"publications": [],
+	"references": [
+		{
+			"name": "Phil Scott (Senior Architect)",
+			"reference": "Shane is a tireless worker and learner. He not only looks to constantly improve his work, but also take what he's learned and share it with others."
+		},
+		{
+			"name": "Ashish Arora (Manager Software Development)",
+			"reference": "Shane is an excellent software developer. He takes a great deal of pride in what he does and he works very hard to achieve the exact results that the customer is looking for. He has worked many late hours as part of my development team just to make certain that a delivered project is exactly what the customer wanted. Shane is passionate about writing code and solving complex problems through development of creative and innovative software. He is conceptually very strong and stays up-to-date with the latest techniques and tools related to software development."
+		},
+		{
+			"name": "Shannon Callaway (Cloud Technology Strategist)",
+			"reference": "Shane was a fantastic employee. He was an extremely dedicated worker who consistently worked to improve his skill set and rise to new challenges. He was personable, dependable, and able to quickly adapt to new situations."
+		},
+		{
+			"name": "Reference Contact Information",
+			"reference": "Contact information for the listed references are available upon request."
+		}
+	],
+	"skills": [
+		{
+			"name": "Web Development",
+			"level": "Master",
+			"keywords": [
+				"MVC 1.0 - 5.0",
+				"ASP.NET Web API 1.0 - 2.2",
+				"ASP.NET WebForms",
+				"Grunt / Gulp / Bower",
+				"HTML5",
+				"Angular",
+				"jQuery",
+				"node",
+				"C#",
+				"LINQ",
+				"JSON",
+				"XML",
+				"REST"
+			]
+		},
+		{
+			"name": "Cloud Services",
+			"level": "Master",
+			"keywords": [
+				"Hyper-V",
+				"System Center",
+				"VMware",
+				"vCenter",
+				"Network Automation",
+				"Windows Server"
+			]
+		},
+		{
+			"name": "Data Storage",
+			"level": "Master",
+			"keywords": [
+				"SQL Server",
+				"RavenRB",
+				"MongoDB",
+				"RabbitMQ",
+				"Redis"
+			]
+		},
+		{
+			"name": "Source Control",
+			"level": "Master",
+			"keywords": [
+				"Git",
+				"TFS",
+				"SourceGear Vault",
+				"Atlassian Stash Adminstration",
+				"GitHub Administration"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "Master",
+			"keywords": [
+				"TeamCity",
+				"Octopus Deploy",
+				"AppVeyor",
+				"GitHub",
+				"Nuget Package Administration",
+				"Visual Studio Team Services"
+			]
+		},
+		{
+			"name": "Backend",
+			"level": "Master",
+			"keywords": [
+				"MassTransit",
+				"TopShelf",
+				"RabbitMQ",
+				"Hangfire"
+			]
+		},
+		{
+			"name": "Testing",
+			"level": "Master",
+			"keywords": [
+				"xUnit",
+				"nUnit",
+				"MSTest",
+				"Benchmark.net"
+			]
+		},
+		{
+			"name": "Logging",
+			"level": "Master",
+			"keywords": [
+				"Serilog",
+				"Log4Net",
+				"SEQ"
+			]
+		},
+		{
+			"name": "Other",
+			"level": "Master",
+			"keywords": [
+				"EntityFramework",
+				"AutoMapper",
+				"Autofac",
+				"SimpleInjector",
+				"Ninject",
+				"Swagger",
+				"Swashbuckle",
+				"PowerShell",
+				"Mediatr",
+				"Tooling",
+				"Extensions",
+				"Cake Build",
+				"Open Source Software",
+				"CQRS",
+				"DDD",
+				"OWIN"
+			]
+		}
+	],
+	"volunteer": [],
+	"work": [
+		{
+			"company": "Cafe Press",
+			"position": "Senior Software Developer",
+			"website": "https://cafepress.com",
+			"startDate": "2017-03-06",
+			"endDate": "",
+			"summary": "Member of the core services team responsible for partnering and interactacting with technical and business contacts to transform, enhance, and build efficiencies.",
+			"highlights": [
+				"Improved unit/integration tests performance.",
+				"Working with DevOps team to improve automated testing/release of core WCF services."
+			]
+		},
+		{
+			"company": "Birch Communications",
+			"position": "Senior Software Developer",
+			"website": "https://birch.com/",
+			"startDate": "2014-01-01",
+			"endDate": "2017-01-01",
+			"summary": "Helped lead efforts of migration of companywide primary B/OSS legacy WCF client / server application to Web API and AngularJS system.",
+			"highlights": [
+				"Maintained and improved primary business Portal used by both internal employees and customers utilizing C#, ASP.Net 4, HTML5, CSS3 and JavaScript / jQuery.",
+				"Used Git Flow development process via Atlassian JIRA and Stash.",
+				"Implemented an automated continous delivery system using TeamCity, Jenkins, and Octopus Deploy.",
+				"Worked closely with Senior Architect to establish best practices for REST API resources, and documentation via Swagger.",
+				"Worked with key business stakeholders during acquisition for knowledge share and system integration.",
+				"Managed, Onboarded, and colaborated with geographically diverse teams to ensure project delivery dates were met.",
+				"Conducted development continuous education, and training on new policies and technology such as unit testing, GitFlow workflow, message queuing, and general developer productivity tips",
+				"Performed code reviews on committed line-of-business code to ensure standards and quality, security, and performance were met.",
+				"Worked with offshore development teams to find gaps in knowledge and documentation and updated internal documentation to fill those gaps.",
+				"Focused on security and performance."
+			]
+		},
+		{
+			"company": "Birch Communications (formerly Cbeyond)",
+			"position": "Cloud Engineer",
+			"website": "https://birch.com/",
+			"startDate": "2013-01-01",
+			"endDate": "2013-12-01",
+			"summary": "Responsible for engineering new products and services.  Leveraging current and new technologies to provide cutting edge new and exciting products for our customers.  Also responsible for refreshing current offering and products to stay in tune with today's market.",
+			"highlights": [
+				"Developed and maintained many APIs and tools for fellow cloud engineers.",
+				"Architected, developed, and maintained network management API.  This API provided provisioning, management, logging, and data retrieval for multiple of the following network devices: Fortinet Forigate, Juniper NetScreen, Cisco ASA, Cisco NSX, and Palo Alto.",
+				"Architected, developed, and maintained VMware vSphere/VMware orchestrator management API.  This API provided provisioning, management, logging, and data retrieval for our VMware virtual machines."
+			]
+		},
+		{
+			"company": "Cbeyond Cloud Services",
+			"position": "Cloud Application Management Engineer",
+			"website": "https://cbeyond.com/",
+			"startDate": "2012-03-01",
+			"endDate": "2013-01-01",
+			"summary": "Responsible for creating and re-defining processes for support staff.  Responsible for Tier 3 Support escalations.  Continued to develop tools and re-work systems to make Tier 2 Support teams and Tier 3 support more efficient, productive, and happy.  Took on new product development working to integrate tools, processes, and added automation to provide a better customer experience.  Worked heavily with System Center, Hyper-V manager, Fortinet Fortigate 3950B and FortiOS 4.11, PowerShell, Cisco UCS, and others.",
+			"highlights": [
+				"Took initiative to develop tools and re-work systems to make Tier 2 Support teams more efficient, productive, and happy."
+			]
+		},
+		{
+			"company": "Cbeyond Cloud Services",
+			"position": "Cloud Services Engineer",
+			"website": "https://cbeyond.com/",
+			"startDate": "2011-07-01",
+			"endDate": "2012-03-01",
+			"summary": "Tier 2 Support Engineer for cloud hosting products including but not limited to IIS, WebDAV, FTP, MSSQL, MySQL, dedicated and virtual hosted servers.",
+			"highlights": [
+				"Took initiative to develop tools and re-work systems to make Tier 2 Support teams more efficient, productive, and happy."
+			]
+		},
+		{
+			"company": "ICT/Sykes",
+			"position": "Apple CPU Tech Support",
+			"website": "https://sykes.com/",
+			"startDate": "2009-12-01",
+			"endDate": "2011-04-01",
+			"summary": "Answered calls for AppleCare CPU tech support. I was responsible for asking relevant probing questions and analyzing the information the customer provided.  Then I would isolate the customers issue to hardware or software and offer the best possible resolution.",
+			"highlights": [
+				"I provided solutions to many networking, security, and DNS issues to maintain productivity on the call floor.  Also made some tools to help advisors through their day to increase productivity and limit distractions.  I have also identified many security holes and provided patches or fixes for them.",
+				"SykesLinks – Custom home page that puts all advisor tools in one place.  Also includes a simplified Kronos (time card).  This also gives the supervisor easy access to see which Kronos code that the advisors were in.",
+				"Apple Support Sites – The apple support websites that advisors use often suffered from a DNS issue that caused loading times to reach 5+ min.  Identified problems, found solution and provided patch.",
+				"Provided execlent customer service and often recieved support member of the week based on customer satisfaction serveys.",
+				"Worked with many different aspects of the Apple computer.  Such as, but not limited to: Email, Networking Issues (wired, wireless), and Hardware/Software Issues"
+			]
+		},
+		{
+			"company": "GSI Commerce (now owned by ebay)",
+			"position": "Warehouse Lead",
+			"website": "http://ebay.com/",
+			"startDate": "2006-07-01",
+			"endDate": "2009-05-01",
+			"summary": "Worked with associates to maintain smooth shipping procedures. Some daily duties include: Resolved any SKU and product discrepancies and find resolution to daily order issues. Worked with distribution partners to coordinate timely pick-up and delivery of product in a consistent manner. Picked, Packed, and Replenished Products. Managed shipping dock. Coordinated World Ship items.",
+			"highlights": [
+				"Led daily standups and coordinated prioritization of work",
+				"Work with associates to maintain smooth shipping procedures.",
+				"Responsible for much of 2nd shift maintenance.",
+				"Responsible for most of 2nd shift IT troubleshooting and repair.",
+				"Utilized AS400 proficiently on a daily basis, also proficient with RF Scanner.",
+				"Certified to drive, all equipment including but not limited to: Forklift, Reach Truck, Cherry Picker, Auto Pallet Jacks, Dock Stocker.",
+				"HAZMAT Certified",
+				"Worked with Upper management to and engineers to develop smoother procedures to maximize productivity."
+			]
+		},
+		{
+			"company": "Elite Online Design",
+			"position": "Software Developer",
+			"website": "http://eliteonlinedesign.net/",
+			"startDate": "2006-09-01",
+			"endDate": "2007-09-01",
+			"summary": "Developed and edited many complex websites with ASP.NET, C#, PHP, MySQL, HTML, CSS and JavaScript.",
+			"highlights": [
+				"Designed Graphics to make the overall site design more appealing.",
+				"Optimized Code and graphics for faster loading.",
+				"Customer Relations, to make sure the customer gets what they need when they needed it."
+			]
+		},
+		{
+			"company": "Solectron",
+			"position": "L2 Repair Tech",
+			"website": "https://flex.com/",
+			"startDate": "2005-06-01",
+			"endDate": "2006-06-01",
+			"summary": "Inspected and repaired various Sanyo/Sprint cellphones down to component level.",
+			"highlights": [
+				"Soldering on a daily basis",
+				"Worked as a member of the Quality Control team"
+			]
+		}
+	]
 }
