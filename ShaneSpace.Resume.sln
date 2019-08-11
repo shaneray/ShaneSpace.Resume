@@ -7,13 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
+		data\resume.json = data\resume.json
 		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{136E3ED6-B4F7-4917-B9BE-179BC23459C5}"
 	ProjectSection(SolutionItems) = preProject
 		src\ShaneSpace.Resume.Web\config.json = src\ShaneSpace.Resume.Web\config.json
-		..\..\..\..\git\Personal\ShaneSpace.Resume\src\ShaneSpace.Resume.Web\data\resume.json = ..\..\..\..\git\Personal\ShaneSpace.Resume\src\ShaneSpace.Resume.Web\data\resume.json
+		data\resume.json = data\resume.json
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ShaneSpace.Resume.Web", "src\ShaneSpace.Resume.Web\", "{EDAD5841-23DC-4286-89AA-486AE356C75F}"
