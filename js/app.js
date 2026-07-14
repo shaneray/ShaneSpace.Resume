@@ -11,12 +11,12 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config($routeProvider, $locationProvider) {
     $routeProvider.
         when('/default', {
-            templateUrl: 'views/Default/Blank.html',
+            templateUrl: '/ShaneSpace.Resume/views/Default/Blank.html',
             controller: 'StandardController',
             pageTitle: 'Shane Ray\'s Resume'
         }).
         when('/interactive', {
-            templateUrl: 'views/SSResumeViewer/Default.html',
+            templateUrl: '/ShaneSpace.Resume/views/SSResumeViewer/Default.html',
             controller: 'InteractiveController',
             pageTitle: 'Shane Ray\'s Resume'
         }).
