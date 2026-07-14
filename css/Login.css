@@ -61,7 +61,7 @@
 .desktop {
     display: table;
     background-color: white !important;
-    background: url(img/Windows-10-wallpaper.jpg);
+    background: url(../img/Windows-10-wallpaper.jpg);
     background-size: cover;
     height: 100%;
     width: 100%;
