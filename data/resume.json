@@ -9,12 +9,12 @@
   ],
   "basics": {
     "name": "Shane Ray",
-    "label": "Senior Software Developer",
+    "label": "Senior Software Engineer · Applied AI",
     "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
     "email": "shane.ray87@gmail.com",
     "phone": "(502) 541-6445",
     "website": "https://ShaneSpace.net",
-    "summary": "Senior software developer specialized in systems/process integration and automation. I enjoy building tools that help others be more productive and happy. Highly accomplished and motivated professional with a proven track record of being a resourceful problem-solver including excellent communication skills, incredible stamina and an eye for perfect detail.  Consistently recognized for providing rapid and cost-effective resolutions to challenging technical issues.",
+    "summary": "Senior software engineer at Uber (U4B Engineering — vouchers and employee mobility) since May 2022, with an prior year on Uber Transit and Vouchers as an extended contract engineer (~5 years on the Uber stack). Backend and full-stack IC on distributed Go services, billing and trip lifecycle, admin web experiences, and CRM-backed communications. Applied AI for engineering: agent workspaces, prompt-driven codemods at scale, and investigation tooling for cross-service RCA. Earlier career: .NET technical lead, cloud automation, and CI/CD at telecom SaaS companies.",
     "location": {
       "address": "4907 Woodsend Rd",
       "city": "Louisville",
@@ -44,34 +44,14 @@
         "url": "https://stackoverflow.com/users/5203905/shane-ray"
       },
       {
-        "network": "Developer Story",
-        "username": "user:5203905",
-        "url": "http://stackoverflow.com/story/shaneray"
-      },
-      {
-        "network": "Slack",
-        "username": "Shane Ray",
-        "url": "https://shanespacedev.slack.com/"
+        "network": "LinkedIn",
+        "username": "ShaneRay",
+        "url": "https://www.linkedin.com/in/shaneray"
       },
       {
         "network": "Twitter",
         "username": "ShaneRay87",
         "url": "https://twitter.com/shaneray87"
-      },
-      {
-        "network": "Reddit",
-        "username": "ShaneRay87",
-        "url": "https://www.reddit.com/user/shaneray87/"
-      },
-      {
-        "network": "Google Plus",
-        "username": "Shane Ray",
-        "url": "https://plus.google.com/u/0/109176240380352789446"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "ShaneRay",
-        "url": "https://www.linkedin.com/in/shaneray"
       }
     ]
   },
@@ -107,6 +87,13 @@
       "keywords": []
     },
     {
+      "name": "Applied AI and developer tooling",
+      "keywords": [
+        "Agent workflows",
+        "Context engineering"
+      ]
+    },
+    {
       "name": "Cloud Computing",
       "keywords": []
     },
@@ -121,14 +108,6 @@
     {
       "name": "Space",
       "keywords": []
-    },
-    {
-      "name": "Ferrets",
-      "keywords": []
-    },
-    {
-      "name": "Bourbon",
-      "keywords": []
     }
   ],
   "languages": [
@@ -138,6 +117,72 @@
     }
   ],
   "publications": [],
+  "projects": [
+    {
+      "name": "IC agent workspace (super-shane)",
+      "startDate": "2025-01-01",
+      "endDate": "",
+      "description": "Persistent, hook-governed agent environment for vouchers on-call RCA, diff authoring, and structured memory.",
+      "highlights": [
+        "Single dispatcher over registered tools; tiered pre-flight context (~55% lower bootstrap token use vs unstructured chat sessions, measured internally).",
+        "Task-runner dashboard, mail/docs/ticket ingest, conventions catalog, and deterministic investigation capture.",
+        "Presented at internal Eng AI Happy Hour (May 2026) as IC plus agent pairing for production engineering."
+      ],
+      "url": "https://ShaneSpace.net",
+      "keywords": [
+        "Node.js",
+        "Agent orchestration",
+        "Developer productivity"
+      ],
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "entity": "Personal",
+      "type": "application"
+    },
+    {
+      "name": "AI-driven Enzyme test stack migration",
+      "startDate": "2024-06-01",
+      "endDate": "2025-12-01",
+      "description": "Led U4B Vouchers deprecation of 850+ legacy Enzyme test files using prompt-engineered, review-gated codemods.",
+      "highlights": [
+        "Methodology adopted by Global Support Services and other teams after IC handoff.",
+        "Preserved CI, lint, and coverage gates while reducing manual migration labor."
+      ],
+      "keywords": [
+        "Prompt engineering",
+        "React",
+        "Testing"
+      ],
+      "roles": [
+        "Technical lead"
+      ],
+      "entity": "Uber",
+      "type": "migration"
+    },
+    {
+      "name": "Go Interface Shadow Runner",
+      "startDate": "2023-04-01",
+      "endDate": "2024-01-01",
+      "description": "Generic Go library for live shadow traffic when changing primary datastores or query paths.",
+      "highlights": [
+        "Used during vouchers Elasticsearch-to-EVA/Pinot migration (Apr 2023–Jan 2024) with built-in migration dashboards.",
+        "Designed for reuse by other teams performing datastore cutovers."
+      ],
+      "keywords": [
+        "Go",
+        "Generics",
+        "Shadow traffic",
+        "Data migration"
+      ],
+      "roles": [
+        "Author"
+      ],
+      "entity": "Uber",
+      "type": "library"
+    }
+  ],
   "references": [
     {
       "name": "Phil Scott (Senior Architect)",
@@ -158,23 +203,55 @@
   ],
   "skills": [
     {
+      "name": "Applied AI and automation",
+      "level": "Master",
+      "keywords": [
+        "LLM workflows",
+        "Prompt engineering",
+        "Agent orchestration",
+        "AI-assisted codemods"
+      ]
+    },
+    {
+      "name": "Backend and distributed systems",
+      "level": "Master",
+      "keywords": [
+        "Go",
+        "Kafka",
+        "Workflow engines",
+        "RPC",
+        "Feature flags",
+        "Cadence"
+      ]
+    },
+    {
+      "name": "Data and analytics",
+      "level": "Master",
+      "keywords": [
+        "SQL",
+        "DWH analytics",
+        "Pinot",
+        "Data migration",
+        "Shadow traffic"
+      ]
+    },
+    {
       "name": "Web Development",
       "level": "Master",
       "keywords": [
-        "MVC 1.0 - 5.0",
-        "ASP.NET Web API 1.0 - 2.2",
-        "ASP.NET WebForms",
-        "ASP.NET .NET Core",
-        "Grunt / Gulp / Bower",
+        "TypeScript",
+        "React",
+        "Redux",
+        "SDUI",
+        "Open Graph",
         "HTML5",
         "Angular",
         "jQuery",
         "node",
         "C#",
-        "LINQ",
-        "JSON",
-        "XML",
-        "REST"
+        "ASP.NET .NET Core",
+        "REST",
+        "JSON"
       ]
     },
     {
@@ -195,7 +272,6 @@
       "keywords": [
         "Microsoft SQL",
         "MySQL",
-        "RavenRB",
         "MongoDB",
         "Redis"
       ]
@@ -205,9 +281,6 @@
       "level": "Master",
       "keywords": [
         "Git",
-        "TFS",
-        "SourceGear Vault",
-        "Atlassian Stash Adminstration",
         "GitHub Administration"
       ]
     },
@@ -215,11 +288,11 @@
       "name": "DevOps",
       "level": "Master",
       "keywords": [
+        "CI/CD",
+        "Bazel",
         "TeamCity",
         "Octopus Deploy",
         "AppVeyor",
-        "GitHub",
-        "Nuget Package Administration",
         "Visual Studio Team Services"
       ]
     },
@@ -228,7 +301,6 @@
       "level": "Master",
       "keywords": [
         "MassTransit",
-        "TopShelf",
         "RabbitMQ",
         "Hangfire"
       ]
@@ -244,45 +316,55 @@
       ]
     },
     {
-      "name": "Logging",
+      "name": "Reliability",
       "level": "Master",
       "keywords": [
-        "Serilog",
-        "Log4Net",
-        "SEQ"
-      ]
-    },
-    {
-      "name": "Other",
-      "level": "Master",
-      "keywords": [
-        "EntityFramework",
-        "AutoMapper",
-        "Autofac",
-        "SimpleInjector",
-        "Ninject",
-        "Swagger",
-        "Swashbuckle",
-        "PowerShell",
-        "Mediatr",
-        "Tooling",
-        "Extensions",
-        "Cake Build",
-        "Open Source Software",
-        "CQRS",
-        "DDD",
-        "OWIN"
+        "On-call",
+        "Distributed tracing",
+        "Log investigation",
+        "Incident RCA",
+        "Metrics and dashboards"
       ]
     }
   ],
   "volunteer": [],
   "work": [
     {
+      "company": "Uber Technologies, Inc.",
+      "position": "Senior Software Engineer",
+      "website": "https://www.uber.com",
+      "startDate": "2022-05-16",
+      "endDate": "",
+      "summary": "Senior IC on U4B Vouchers and employee mobility (cost center U4B Engineering): distributed Go services, billing and trip lifecycle, web-vouchers admin app, CRM transactional messaging, and backend on-call. Remote (Louisville, KY).",
+      "highlights": [
+        "Built and operate super-shane, a persistent IC agent workspace (task runner, ingest, tool dispatch); ~55% lower bootstrap context vs unstructured LLM sessions; demo at Eng AI Happy Hour (May 2026).",
+        "Led AI-assisted deprecation of 850+ Enzyme test files; approach reused by Global Support Services and other teams after handoff.",
+        "Led vouchers Elasticsearch-to-EVA/Pinot migration (Apr 2023–Jan 2024) without downtime; authored Go Interface Shadow Runner and Neutrino client libraries.",
+        "Owned SMS rich link previews (Open Graph on voucher claim pages) from spec through production (Apr 2025).",
+        "Investigated capital-bill ingestion loss and voucher tips settling to personal payment methods (H1 2026): DWH-scale datasets, billing-engine tracing, multi-team fixes in flight.",
+        "Drove Uber Me Quick Send backend and SDUI paths, geolocation autoclaim, and web-vouchers performance rehaul (50+ memoized selectors).",
+        "Cut voucher transactional email failure rate from over 17% to 0–0.5% via Bloc template fixes and observability adopted across U4B CRM.",
+        "Led ~50% on-call alert reduction initiative; documented GSS handoff saving 120+ vouchers engineer hours; Uber Technology and Velocity peer awards."
+      ]
+    },
+    {
+      "company": "Uber Technologies, Inc.",
+      "position": "Software Engineer (Extended Contract)",
+      "website": "https://www.uber.com",
+      "startDate": "2021-06-14",
+      "endDate": "2022-05-15",
+      "summary": "Extended contract engineer on Uber Transit (Jun–Nov 2021) then U4B Vouchers (Dec 2021–May 2022); converted to full-time SWE II on 2022-05-16.",
+      "highlights": [
+        "Transit: removed Morpheus experiment dependencies and migrated flags to Flipr ahead of Morpheus decommission.",
+        "Vouchers: guest search, cancel voucher/code APIs, email failure observability (failure rate improvement program), and admin dashboard V3 foundations."
+      ]
+    },
+    {
       "company": "Lingo Communications",
       "position": "Technical Lead",
       "website": "https://lingo.com",
       "startDate": "2018-05-01",
-      "endDate": "",
+      "endDate": "2022-05-15",
       "summary": "Responsible for the overall planning, execution and success of our internal software.",
       "highlights": [
         "Created architecture and developed new customer account portal to replace existing aging solution",
