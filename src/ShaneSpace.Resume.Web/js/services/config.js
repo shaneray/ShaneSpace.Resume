@@ -1,9 +1,9 @@
-﻿angular.module("configService", [])
+angular.module("configService", [])
     .factory('config', ['$http',
     function ($http) {
         // declare
         this.promise = null;
-        configUrl = "/config.json";
+        configUrl = "config.json";
 
         // methods
         function loadConfig() {

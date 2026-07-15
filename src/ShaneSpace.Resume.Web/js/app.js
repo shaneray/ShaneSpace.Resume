@@ -1,4 +1,4 @@
-﻿var myApp = angular.module('resume', ['ngRoute', 'configService', 'windowManagerService', 'resumeService'])
+var myApp = angular.module('resume', ['ngRoute', 'configService', 'windowManagerService', 'resumeService'])
     .config(config)
     .run(run);
 

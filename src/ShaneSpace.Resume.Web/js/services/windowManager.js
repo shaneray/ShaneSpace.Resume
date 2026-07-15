@@ -22,19 +22,19 @@
                     {
                         name: "Notepad",
                         icon: "file text outline",
-                        view: 'views/SSResumeViewer/windows/notepad/notepad.html',
+                        view: 'views/SSResumeViewer/Windows/notepad/notepad.html',
                         extensions: [ "txt" ]
                     },
                     {
                         name: "Visual Studio Code",
                         icon: "vsCode",
-                        view: 'views/SSResumeViewer/windows/vscode/vscode.html',
+                        view: 'views/SSResumeViewer/Windows/vscode/vscode.html',
                         extensions: ["json"]
                     },
                     {
                         name: "Microsoft Edge",
                         icon: "microsoftEdge",
-                        view: 'views/SSResumeViewer/windows/edge/edge.html',
+                        view: 'views/SSResumeViewer/Windows/edge/edge.html',
                         extensions: ["html"]
                     }
                 ]
