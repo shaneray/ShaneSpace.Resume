@@ -1,6 +1,6 @@
 angular.module('displayService', [])
     .factory('display', [function () {
-        var P0_PROFILES = ['linkedin', 'github'];
+        var P0_PROFILES = ['linkedin', 'github', 'stack overflow'];
         var P1_PROFILES = ['stack overflow', 'nuget'];
 
         function parseYear(date) {
@@ -289,6 +289,17 @@ angular.module('displayService', [])
             return resume;
         }
 
+        function buildGroupTenureLine(roles) {
+            if (!roles || roles.length <= 1) {
+                return '';
+            }
+
+            return roles.map(function (work) {
+                return asciiPrint(work.position) + ' (' +
+                    formatDateRange(work.startDate, work.endDate) + ')';
+            }).join(' | ');
+        }
+
         function buildWorkRoleEntry(work) {
             var datesLine = formatDateRange(work.startDate, work.endDate);
 
@@ -302,7 +313,7 @@ angular.module('displayService', [])
                 dateRange: formatDateRange(work.startDate, work.endDate),
                 datesLine: asciiPrint(datesLine),
                 location: asciiPrint(work.location || ''),
-                showSummary: work.displayTier === 'P0',
+                showSummary: work.printShowSummary !== false && work.displayTier === 'P0',
                 summary: asciiPrint(work.summary),
                 highlights: (work.highlights || []).slice(0, work.printBulletLimit).map(asciiPrint)
             };
@@ -337,6 +348,7 @@ angular.module('displayService', [])
                         result.push({
                             merged: true,
                             company: asciiPrint(groupedRoles[0].company),
+                            tenureLine: buildGroupTenureLine(groupedRoles),
                             roles: groupedRoles.map(buildWorkRoleEntry)
                         });
                     } else {
@@ -458,7 +470,7 @@ angular.module('displayService', [])
                             line: asciiPrint(
                                 award.title + ' | ' + award.awarder + ' (' + parseYear(award.date) + ')'
                             ),
-                            summary: asciiPrint(shortenAwardSummary(award.summary))
+                            summary: ''
                         });
                     }
                 });

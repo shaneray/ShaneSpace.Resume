@@ -1,27 +1,40 @@
 {
   "awards": [
     {
+      "title": "Uber Technology Award",
+      "date": "2024-01-31",
+      "awarder": "Uber Technologies",
+      "summary": "Peer recognition for zero-downtime Elasticsearch-to-Apache Pinot migration and CRM messaging reliability improvements.",
+      "displayTier": "P0"
+    },
+    {
+      "title": "Uber Velocity Award",
+      "date": "2024-12-01",
+      "awarder": "Uber Technologies",
+      "summary": "Peer recognition for vouchers on-call reduction program and cross-team platform delivery velocity.",
+      "displayTier": "P0"
+    },
+    {
       "title": "Excellence Award",
       "date": "2012-01-01",
       "awarder": "Cbeyond",
-      "summary": "Given in recognition of outstanding delivery of our Total Cloud Data Center provisioning and network automation solution."
+      "summary": "Given in recognition of outstanding delivery of our Total Cloud Data Center provisioning and network automation solution.",
+      "displayTier": "P1"
     }
   ],
   "basics": {
     "name": "Shane Ray",
-    "label": "Senior Software Engineer · Applied AI",
+    "label": "Senior Software Engineer | Distributed Systems & Applied AI",
     "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
     "email": "shane.ray87@gmail.com",
     "phone": "(502) 541-6445",
     "website": "https://ShaneSpace.net",
-    "summary": "Senior software engineer at Uber (U4B Engineering — vouchers and employee mobility) since May 2022, with an prior year on Uber Transit and Vouchers as an extended contract engineer (~5 years on the Uber stack). Backend and full-stack IC on distributed Go services, billing and trip lifecycle, admin web experiences, and CRM-backed communications. Applied AI for engineering: agent workspaces, prompt-driven codemods at scale, and investigation tooling for cross-service RCA. Earlier career: .NET technical lead, cloud automation, and CI/CD at telecom SaaS companies.",
-    "summaryShort": "Senior software engineer at Uber U4B Engineering building Go microservices for billing, trip lifecycle, and voucher admin. Applied AI practitioner: agent workspaces, prompt-driven codemods at scale, and cross-service RCA tooling. ~5 years on the Uber stack; prior technical lead modernizing telecom SaaS to REST APIs, CI/CD, and Elasticsearch-scale data migrations.",
-    "summaryKeywords": "Go, microservices, Kafka, Elasticsearch, CI/CD, React, TypeScript, Applied AI, prompt engineering, on-call, distributed systems, SQL, Pinot, Redis, Bazel",
+    "summary": "Senior Software Engineer with 5+ years at Uber as primary backend owner for the Uber for Business vouchers platform: Go microservices for billing, trip lifecycle, CRM messaging, and production on-call. Backend and full-stack IC on Kafka-backed distributed systems, a 9-month zero-downtime Elasticsearch-to-Apache Pinot migration, and enterprise-scale reliability programs. Applied AI practitioner: agent workspaces, prompt-driven codemods adopted across teams (850+ test files), and cross-service RCA tooling. Prior technical lead for a 10,000+ account B2B SaaS platform.",
+    "summaryShort": "Senior Software Engineer with 5+ years at Uber owning Go microservices for Uber for Business billing, trip lifecycle, and vouchers at enterprise scale. Primary backend on-call; led 9-month zero-downtime Elasticsearch-to-Apache Pinot migration and cut CRM email failures from 17% to under 0.5%. Applied AI practitioner: agent workspaces and prompt-driven codemods (850+ files) adopted across teams. Prior technical lead for 10,000+ account B2B SaaS.",
+    "summaryKeywords": "Go, Golang, microservices, distributed systems, Kafka, Elasticsearch, Apache Pinot, Redis, SQL, CI/CD, Bazel, React, TypeScript, system design, on-call, SRE, incident response, RCA, Applied AI, LLM, prompt engineering, scalability, backend engineer",
     "location": {
-      "address": "4907 Woodsend Rd",
       "city": "Louisville",
       "countryCode": "US",
-      "postalCode": "40229",
       "region": "Kentucky"
     },
     "profiles": [
@@ -47,7 +60,9 @@
         "network": "Stack Overflow",
         "username": "user:5203905",
         "url": "https://stackoverflow.com/users/5203905/shane-ray",
-        "displayTier": "P1"
+        "displayTier": "P0",
+        "reputation": 1469,
+        "memberSince": "2015"
       },
       {
         "network": "LinkedIn",
@@ -62,14 +77,6 @@
         "displayTier": "P2"
       }
     ]
-  },
-  "printProfiles": {
-    "staff": {
-      "basics": {
-        "label": "Staff Software Engineer · Applied AI",
-        "summaryShort": "Staff-level IC at Uber U4B Engineering owning Go microservices for billing, trip lifecycle, and voucher platforms at scale. Applied AI leader: agent workspaces, prompt-driven codemods adopted across teams, and cross-service RCA tooling. ~5 years on the Uber stack; prior technical lead driving REST API modernization and CI/CD at telecom SaaS."
-      }
-    }
   },
   "education": [
     {
@@ -140,7 +147,7 @@
     {
       "name": "IC agent workspace (super-shane)",
       "displayTier": "P0",
-      "printExclude": true,
+      "printExclude": false,
       "printHighlightLimit": 0,
       "startDate": "2025-01-01",
       "endDate": "",
@@ -170,7 +177,7 @@
       "startDate": "2024-06-01",
       "endDate": "2025-12-01",
       "printHighlightLimit": 0,
-      "description": "React/TypeScript: led U4B Vouchers deprecation of 850+ legacy Enzyme test files using prompt-engineered, review-gated codemods.",
+      "description": "React/TypeScript: led Uber for Business Vouchers deprecation of 850+ legacy Enzyme test files using prompt-engineered, review-gated codemods.",
       "highlights": [
         "Methodology adopted by Global Support Services and other teams after IC handoff.",
         "Preserved CI, lint, and coverage gates while reducing manual migration labor."
@@ -192,9 +199,9 @@
       "startDate": "2023-04-01",
       "endDate": "2024-01-01",
       "printHighlightLimit": 0,
-      "description": "Go library for live shadow traffic during Elasticsearch-to-Pinot datastore cutovers with built-in migration dashboards.",
+      "description": "Go library for live shadow traffic during Elasticsearch-to-Apache Pinot datastore cutovers with built-in migration dashboards.",
       "highlights": [
-        "Used during vouchers Elasticsearch-to-EVA/Pinot migration (Apr 2023–Jan 2024) with built-in migration dashboards.",
+        "Used during vouchers Elasticsearch-to-Apache Pinot migration (Apr 2023-Jan 2024) with built-in migration dashboards.",
         "Designed for reuse by other teams performing datastore cutovers."
       ],
       "keywords": [
@@ -250,14 +257,14 @@
       "displayTier": "P0",
       "keywords": [
         "Go",
+        "Golang",
         "Microservices",
         "Kafka",
+        "gRPC",
         "Workflow engines",
         "RPC",
         "Feature flags",
-        "Cadence",
-        "RabbitMQ",
-        "MassTransit"
+        "Cadence"
       ]
     },
     {
@@ -267,8 +274,8 @@
       "keywords": [
         "SQL",
         "Elasticsearch",
+        "Apache Pinot",
         "DWH analytics",
-        "Pinot",
         "Data migration",
         "Shadow traffic"
       ]
@@ -281,11 +288,8 @@
         "TypeScript",
         "React",
         "Redux",
-        "SDUI",
-        "Open Graph",
+        "Server-driven UI",
         "HTML5",
-        "Angular",
-        "jQuery",
         "node",
         "C#",
         "ASP.NET .NET Core",
@@ -296,7 +300,7 @@
     {
       "name": "Cloud Services",
       "level": "Master",
-      "displayTier": "P2",
+      "displayTier": "Hidden",
       "keywords": [
         "Hyper-V",
         "System Center",
@@ -333,16 +337,15 @@
       "keywords": [
         "CI/CD",
         "Bazel",
+        "Git",
         "TeamCity",
-        "Octopus Deploy",
-        "AppVeyor",
-        "Visual Studio Team Services"
+        "Octopus Deploy"
       ]
     },
     {
       "name": "Backend",
       "level": "Master",
-      "displayTier": "P2",
+      "displayTier": "Hidden",
       "keywords": [
         "MassTransit",
         "RabbitMQ",
@@ -366,6 +369,7 @@
       "displayTier": "P0",
       "keywords": [
         "On-call",
+        "SRE",
         "Distributed tracing",
         "Log investigation",
         "Incident RCA",
@@ -384,15 +388,15 @@
       "displayTier": "P0",
       "displayGroup": "uber",
       "printBulletLimit": 3,
-      "location": "Remote · Louisville, KY",
-      "summary": "Senior IC on U4B Vouchers and employee mobility (cost center U4B Engineering): distributed Go services, billing and trip lifecycle, web-vouchers admin app, CRM transactional messaging, and backend on-call. Remote (Louisville, KY).",
+      "location": "Remote | Louisville, KY",
+      "summary": "Primary backend IC and on-call owner for Uber for Business vouchers: Go microservices for billing, trip lifecycle, admin web app, and CRM transactional messaging at enterprise scale.",
       "highlights": [
-        "Built and operate super-shane, a persistent IC agent workspace (task runner, ingest, tool dispatch); ~55% lower bootstrap context vs unstructured LLM sessions; demo at Eng AI Happy Hour (May 2026).",
-        "Led AI-assisted deprecation of 850+ Enzyme test files; approach reused by Global Support Services and other teams after handoff.",
-        "Led vouchers Elasticsearch-to-EVA/Pinot migration (Apr 2023–Jan 2024) without downtime; authored Go Interface Shadow Runner and Neutrino client libraries.",
-        "Cut voucher transactional email failure rate from over 17% to 0–0.5% via Bloc template fixes and observability adopted across U4B CRM.",
-        "Led ~50% on-call alert reduction initiative; documented GSS handoff saving 120+ vouchers engineer hours; Uber Technology and Velocity peer awards.",
-        "Drove Uber Me Quick Send backend and SDUI paths, geolocation autoclaim, and web-vouchers performance rehaul (50+ memoized selectors)."
+        "Reduced voucher transactional email failure rate from 17% to under 0.5% via CRM template and observability fixes adopted platform-wide for Uber for Business enterprise customers.",
+        "Led 9-month zero-downtime Elasticsearch-to-Apache Pinot migration for vouchers analytics using Go shadow-traffic library; pattern reused for other datastore cutovers.",
+        "Drove ~50% on-call alert reduction across vouchers Go microservices; documented GSS handoff saving 120+ engineer-hours; Uber Technology and Velocity peer awards.",
+        "Built agent workspace for on-call RCA and diff authoring (~55% lower LLM bootstrap tokens vs unstructured sessions); presented at Uber Eng AI forum (May 2026).",
+        "Led AI-assisted deprecation of 850+ Enzyme test files across vouchers admin codebase; methodology adopted by Global Support Services and other teams.",
+        "Drove Uber Me Quick Send backend, server-driven UI paths, geolocation autoclaim, and web-vouchers performance rehaul (50+ memoized selectors)."
       ]
     },
     {
@@ -403,11 +407,10 @@
       "endDate": "2022-05-15",
       "displayTier": "P0",
       "displayGroup": "uber",
-      "printBulletLimit": 1,
-      "summary": "Extended contract engineer on Uber Transit (Jun–Nov 2021) then U4B Vouchers (Dec 2021–May 2022); converted to full-time SWE II on 2022-05-16.",
-      "highlights": [
-        "Vouchers: guest search, cancel voucher/code APIs, email failure observability, and admin dashboard V3 foundations."
-      ]
+      "printBulletLimit": 0,
+      "printShowSummary": false,
+      "summary": "Contract engineer on Uber Transit (Jun-Nov 2021) then Uber for Business Vouchers (Dec 2021-May 2022); converted to full-time May 2022.",
+      "highlights": []
     },
     {
       "company": "Lingo Communications",
@@ -416,15 +419,14 @@
       "startDate": "2018-05-01",
       "endDate": "2022-05-15",
       "displayTier": "P0",
-      "printBulletLimit": 3,
-      "summary": "Technical lead owning internal SaaS platform: customer portal (10,000+ accounts), self-service marketplace, CI/CD across 4 environments, and .NET Core migration.",
+      "printBulletLimit": 1,
+      "summary": "Technical lead owning B2B SaaS platform serving 10,000+ accounts: customer portal, self-service marketplace, CI/CD across 4 environments, and .NET Core migration.",
       "highlights": [
-        "Architected and delivered a new customer account portal replacing a legacy system serving 10,000+ business accounts.",
-        "Designed and built an online marketplace enabling self-service ordering for new telecom customers.",
-        "Established CI/CD pipelines and automated deployment tooling across 4 development environments.",
-        "Led migration of core libraries and services to .NET Core/.NET Standard, reducing deployment friction.",
-        "Mentored a team of 6 developers (junior and senior) on architecture, code quality, and delivery practices.",
-        "Partnered with business owners and operations during 2 acquisitions for knowledge transfer and system integration.",
+        "Architected and delivered customer account portal replacing legacy system serving 10,000+ B2B accounts.",
+        "Built CI/CD and deployment automation across 4 environments; led .NET Core migration reducing deployment friction.",
+        "Technical lead for 6 engineers on architecture, code quality, and delivery practices.",
+        "Led system integration across 2 acquisitions for knowledge transfer and platform consolidation.",
+        "Designed and built online marketplace enabling self-service ordering for new telecom customers.",
         "Identified and resolved technical debt across 3 major product lines, improving release velocity."
       ]
     },

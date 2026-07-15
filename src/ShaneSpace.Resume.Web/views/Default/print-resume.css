@@ -62,6 +62,12 @@
         color: #000 !important;
     }
 
+    .print-merged-tenure {
+        font-size: 9.5pt;
+        color: #333;
+        margin-bottom: 6pt;
+    }
+
     .print-sub-role {
         margin-bottom: 8pt;
         page-break-inside: avoid;

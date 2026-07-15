@@ -16,15 +16,18 @@ const printUrl = baseUrl + '/Index.html#/default?print=1' + profileQuery;
 
 var requiredKeywords = [
     'Go',
+    'Golang',
     'microservices',
+    'distributed systems',
     'Elasticsearch',
+    'Apache Pinot',
     'CI/CD',
     'on-call',
+    'SRE',
     'Kafka',
     'React',
     'Applied AI',
-    'prompt engineering',
-    'Pinot'
+    'prompt engineering'
 ];
 
 var requiredFields = [
@@ -34,7 +37,7 @@ var requiredFields = [
     { label: 'Location', pattern: /Louisville.*Kentucky|Louisville,\s*Kentucky/i },
     { label: 'LinkedIn', pattern: /linkedin\.com\/in\/shaneray/i },
     { label: 'Github', pattern: /github\.com\/shaneray/i },
-    { label: 'Summary', pattern: /Senior software engineer at Uber/i },
+    { label: 'Summary', pattern: /Senior Software Engineer with 5\+ years at Uber owning Go microservices/i },
     { label: 'Current role', pattern: /Senior Software Engineer/ },
     { label: 'Uber company', pattern: /Uber Technologies/i },
     { label: 'Experience section', pattern: /Experience/i }

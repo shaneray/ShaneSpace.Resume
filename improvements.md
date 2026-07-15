@@ -1,214 +1,300 @@
-# Print PDF improvements roadmap
+# Resume improvements — FAANG / ATS / recruiter optimization
 
-Goal: bring the print PDF (`/#/default?print=1` → Save as PDF) to **10/10 for recruiters** and **10/10 for ATS parsers**, without adding a `.docx` export path.
+Roadmap for making Shane Ray's resume maximally competitive for **FAANG+** (Meta, Amazon, Apple, Netflix, Google, Microsoft, and tier-1 peers like Stripe, Databricks, Coinbase, etc.) while staying honest and ATS-parseable.
 
-**Current baseline (Jul 2026):** ~8/10 recruiters · ~5–6/10 ATS.
+**Current strengths (keep and amplify):**
+- ~5 years on the **Uber** stack — single strongest signal for big-tech pipelines
+- Quantified impact in several bullets (email failure 17% → 0.5%, 850+ test migrations, ~50% on-call reduction, 120+ engineer-hours saved)
+- **Applied AI** differentiation is timely and rare among backend ICs
+- Print pipeline already targets ATS: ASCII normalization, standard section labels (`Summary`, `Experience`, `Skills`), 1–2 page tier model, keyword line
 
-**Source of truth:** `data/resume.json` + `displayService.js` tier model + `Default.html` / `Theme.css` print rules.
-
----
-
-## Definition of done
-
-### Recruiter 10/10
-
-A hiring manager or recruiter can scan the PDF in **under 30 seconds**, understand seniority + target role + top companies, and trust the depth without leaving the document. Fits **1–2 pages** on Letter with default browser print settings.
-
-### ATS 10/10 (PDF-only)
-
-A typical enterprise ATS (Workday, Greenhouse, Lever, iCIMS, Taleo) can extract **name, email, phone, location, summary, each job (title · company · dates), education, and skills keywords** with high fidelity from the saved PDF text layer. No critical content exists only as a link or CSS-hidden DOM node.
+**Biggest gaps to close:**
+1. ~~Uber awards and cross-org influence are buried in a bullet, not surfaced~~ **Done** — awards section + print template
+2. ~~Highest-differentiation work (agent workspace, AI codemods) is `printExclude: true`~~ **Done** — agent workspace on print; Enzyme codemod covered in Uber bullets (print excluded to stay ≤2 pages)
+3. ~~Missing scale context~~ **Done** — 9-month migration, 850+ files, 10k+ accounts, 120+ engineer-hours woven into summary/bullets (add QPS/volume when you have internal numbers)
+4. ~~No degree compensation~~ **Done** — Stack Overflow 1,469 rep on profile; keyword density improved
+5. ~~Summary and bullets mix internal jargon~~ **Done** — de-jargonized in `resume.json`
 
 ---
 
-## Priority legend
+## Implementation status (2026-07-14)
 
-| Priority | Meaning |
-|----------|---------|
-| **P0** | High impact; do first |
-| **P1** | Important polish |
-| **P2** | Nice-to-have / validation |
+| Item | Status | Notes |
+|------|--------|-------|
+| P0.1 Awards + projects on print | **Complete** | `Default.html` renders Awards + Projects; Uber awards added |
+| P0.2 Summary + keywords rewrite | **Complete** | `summaryShort`, `summaryKeywords`, `label` updated |
+| P0.3 Uber bullets reordered/de-jargonized | **Complete** | Top 3 bullets on print; 3 more in full web view |
+| P0.4 Scale metrics | **Complete** | Documented metrics in summary/bullets; optional QPS/TB later |
+| P0.5 Uber tenure consolidation | **Complete** | Merged `displayGroup` + tenure line in print |
+| P0.6 Street address removed | **Complete** | Location is city/region only |
+| P1.7 Staff/print profiles | **Skipped** | Per user request — no `printProfiles` |
+| P1.8 No-degree compensation | **Complete** | SO 1,469 rep; P0 on print |
+| P1.9 Skills ATS optimization | **Complete** | Golang, gRPC, SRE, Apache Pinot; cloud/backend hidden |
+| P1.10 Lingo reframe | **Complete** | B2B/leadership language; 1 print bullet |
+| P1.11 Earlier experience compression | **Complete** | Already P2 one-liners |
+| P2.12 Template + validate-print | **Complete** | Awards/projects sections; keywords updated |
+| P2.13 Per-company profiles | **Skipped** | Per user request |
+| P2.14 LinkedIn sync | **Complete** | `data/linkedin-sync.md` — paste on LinkedIn |
+| P2.15 Plain-text export | **Skipped** | Not requested |
+| QA `validate-print` | **Complete** | 2 pages, all keyword checks pass |
+| QA award dates | **Complete** | Technology Jan 2024; Velocity Dec 2024 — verify internally |
 
----
 
-## P0 — Shared (recruiter + ATS)
+## How FAANG screens your resume (two audiences)
 
-These fixes help both audiences.
+| Stage | Who reads it | Time | What they optimize for |
+|-------|--------------|------|------------------------|
+| **ATS** | Software | Instant | Keyword match, title, company names, dates, degree field (often required checkbox) |
+| **Recruiter** | Human | 6–15 sec | Brand (Uber ✓), level (Senior/Staff), location/remote, clear impact numbers |
+| **HM** | Engineer | 2–5 min | Scope, technical depth, system design signals, leadership without people-mgmt |
 
-### Content & structure
-
-- [ ] **Remove print promo clutter** — Delete the `resume-notice` line (“Full interactive resume: …”) from the About section in print. Move the URL to a single subtle footer line if you still want it discoverable.
-- [ ] **Use ATS-standard section labels in print** — Rename sidebar headings for print only: `Work` → `Experience`, `About` → `Summary` (or `Professional Summary`). Keep web labels unchanged.
-- [ ] **Always repeat company name on grouped roles** — Remove `print-grouped-hide` for company `<h4>` in print (or show a compact “Uber Technologies, Inc. — continued” line). ATS and recruiters both need unambiguous employer per role.
-- [ ] **Structured P2 “Earlier Experience”** — Replace the single inline run-on sentence with minimal structured entries, one per role:
-
-  ```
-  Title · Company · Start – End
-  ```
-
-  Keep each entry one line; no bullets. Preserves parseability without adding page bulk.
-
-- [ ] **Stop using CSS to hide print bullets** — Replace `print-hidden-bullet` (`display: none`) with `ng-if` / `limitTo` so truncated bullets are **omitted from the DOM**, not merely hidden. Ensures the PDF text layer matches what humans see and avoids parser confusion.
-- [ ] **Eliminate “see website for more” gaps** — Remove or rewrite `more-highlights` (“Additional accomplishments available at …”). Either include the top N bullets only (current tier limits) or add a single inline clause with the highest-value omitted keyword (e.g. “Also: on-call reduction, peer awards”). Critical keywords must live in the PDF text.
-
-### Contact & links (PDF text layer)
-
-- [ ] **Print full URLs for profiles** — Header contact row should show `linkedin.com/in/shaneray` and `github.com/shaneray` (full URL or canonical path), not just “LinkedIn” / “Github” anchor text.
-- [ ] **Print website as plain text** — Include `resume.basics.website` in the print header contact row.
-- [ ] **Ensure mailto/tel survive as readable text** — Email and phone must appear as literal characters in the PDF (already mostly true; verify after changes).
-
-### Layout & typography
-
-- [ ] **Lock single-column reading order** — Audit print CSS so DOM order matches visual order: Header → Summary → Skills → Experience → Projects → Education → Awards → References. No floated sidebars that reorder content in the text layer.
-- [ ] **Consistent date format** — Standardize on `MM/YYYY – MM/YYYY` (or `MM/YYYY – Present`) everywhere in print. Fix P2 block which currently uses `yyyy` only.
-- [ ] **Enforce 1–2 page budget** — Add a print QA step (see Validation). Tune `printBulletLimit` per role in `resume.json` until Chrome “Save as PDF” reliably lands at ≤ 2 pages.
-
-### PDF generation reliability
-
-- [ ] **Document the canonical export recipe** — Add to README: browser (Chrome), paper size Letter, margins Default, **Background graphics off**, headers/footers off. One command path if you add headless export later.
-- [ ] **Optional: headless PDF script** — Add a small script (e.g. Puppeteer/Playwright) that loads `?print=1`, waits for Angular render, and writes `Shane-Ray-Resume.pdf`. Removes human variance in margins/scale across machines. *(Still PDF-only.)*
-- [ ] **Embed PDF document metadata** — Title: `Shane Ray – Senior Software Engineer Resume`; Author: `Shane Ray`; Subject: role keywords. Set via print CSS `@page` where supported or in the headless export step.
+Your resume must win **ATS + recruiter** in the PDF. The web resume can stay full-fidelity for HMs who click through.
 
 ---
 
-## P0 — Recruiter-specific
+## Priority 0 — Do these first (highest ROI)
 
-### Scan path & hierarchy
+### 1. Surface Applied AI and Uber awards on the print PDF — **Complete**
 
-- [ ] **Lead with target role in header** — Keep `label` prominent (`Senior Software Engineer · Applied AI`). Consider adding a one-line subtitle under name only if `label` ever moves.
-- [ ] **Tighten summaryShort to 3 sentences max** — First sentence: level + company + domain. Second: technical scope. Third: differentiator (Applied AI). Review quarterly against target job descriptions.
-- [ ] **Merge adjacent Uber roles in print (optional)** — If page budget is tight, render Uber contract + FTE as one block with two date ranges under one company header. Recruiters see one employer streak; reduces repetition.
-- [ ] **Hide job summaries for P1 in print** — Show position · company · dates + bullets only. Saves ~2–4 lines per P1 role; summaries remain on web.
-- [ ] **Demote or drop “Highlights” subheading in print** — Bullets under each role need no extra `<h4>Highlights</h4>`; it wastes vertical space and adds noise.
-- [ ] **Skills: lead with a keyword line** — Add optional `basics.summaryKeywords` or derive top 12–15 skills into one comma-separated line under the summary for instant keyword scan (recruiters ctrl-F; ATS loves it).
-- [ ] **Education: one line for non-degree paths** — For high-school/general-studies entries, print as `General Studies · Institution · Years` without course lists (courses already screen-only). Consider hiding P1 education entirely if page count exceeds 2.
+Implemented:
+- Uber Technology + Velocity awards in `awards` (`displayTier: P0`)
+- Agent workspace project on print (`printExclude: false`, description only)
+- Enzyme codemod stays web-only (`printExclude: true`) — already in Uber bullet #3 area; keeps PDF at 2 pages
+- Awards + Projects sections added to `Default.html`
 
-### Visual polish
-
-- [ ] **Stronger role header line** — Single line: **Senior Software Engineer** · Uber Technologies, Inc. · May 2022 – Present. Reduces vertical stack of `<h3>` + `<h4>` + date span.
-- [ ] **Page-break rules** — Keep `page-break-inside: avoid` on work entries; add `page-break-after: avoid` on section headings so “Experience” never orphans at page bottom.
-- [ ] **Footer: name + page only** — Replace or simplify footer to `Shane Ray · Page N` (if using headless PDF with page numbers). Drop redundant label if header already states it.
+*(Verify exact Uber award names/dates against internal records — placeholders use 2024-01-01.)*
 
 ---
 
-## P0 — ATS-specific (PDF-only)
+### 2. Rewrite the summary for ATS + recruiter scan — **Complete**
 
-### Parse-friendly HTML → PDF pipeline
+Applied to `resume.json`:
 
-- [ ] **Semantic job blocks** — Each role should expose a predictable text pattern in DOM order:
+> Senior Software Engineer with 5+ years at Uber building Go microservices for billing, trip lifecycle, and voucher platforms at scale. Backend and full-stack IC on Kafka-backed distributed systems, Elasticsearch/Pinot data migrations, and production on-call. Applied AI practitioner: agent workspaces, prompt-driven codemods adopted across teams, and cross-service RCA tooling. Prior technical lead modernizing telecom SaaS to REST APIs, CI/CD, and large-scale data migrations.
 
-  ```
-  [Job Title]
-  [Company Name]
-  [Start Date] – [End Date]
-  • bullet
-  • bullet
-  ```
+**`summaryKeywords` (live on print):**
 
-  Avoid nesting title/company inside styled containers that PDF generators flatten oddly.
-
-- [ ] **No `display: none` content in print DOM** — Audit all print paths: P2 work entries, hidden bullets, hidden education, screen-only sections. Anything not meant for PDF should be `screen-only` / `ng-if="!printMode"`, not CSS-hidden.
-- [ ] **Skills as explicit keyword lists** — Prefer `Go, Python, Elasticsearch, …` comma-separated per category over middot separators if ATS tests show middots merge words. Validate with a parser (see Validation).
-- [ ] **Include location on roles where relevant** — Add optional `work.location` (e.g. “Remote · Louisville, KY”) for current role; many ATS map location fields.
-- [ ] **Award summaries in print** — `award.summary` is screen-only today. Include a short clause in print for keyword coverage (e.g. “cloud automation, network provisioning”).
-- [ ] **Avoid icon fonts in print** — Confirm Semantic UI / icon fonts do not appear in PDF (profiles section already hidden; verify no stray icons elsewhere).
-- [ ] **Use ASCII-safe punctuation where possible** — Replace em-dash `—` with ` – ` (en dash + spaces) or ` | ` if parser tests show mojibake. Test after save.
-
-### Keyword coverage without bloat
-
-- [ ] **Curate `printBulletLimit` bullets in JSON** — Ensure the *kept* bullets per role contain the highest-value keywords from the full set (technologies, metrics, scope). Re-order `highlights[]` so print limits always take the top N by importance, not insertion order.
-- [ ] **P2 skills keyword spillover** — Fold critical P2-only tech (e.g. RabbitMQ, MassTransit) into P0/P1 skill lines or summaryShort if they match target JDs.
-- [ ] **Projects: one line each in print** — Already compact; ensure `description` includes stack nouns (Go, React, etc.) for parser keyword density.
+```
+Go, Golang, microservices, distributed systems, Kafka, Elasticsearch, Apache Pinot, Redis, SQL,
+CI/CD, Bazel, React, TypeScript, system design, on-call, SRE, incident response, RCA,
+Applied AI, LLM, prompt engineering, feature flags, RPC, scalability, backend engineer
+```
 
 ---
 
-## P1 — Content curation (`resume.json`)
+### 3. Fix Uber bullet ordering and de-jargonize for external readers — **Complete**
 
-- [ ] **Audit every bullet for metric or outcome** — Pattern: action + scope + result. Fix weak P1 bullets (“Improved unit/integration tests performance”) before print limits hide the strong ones.
-- [ ] **Align title with target JDs** — `basics.label` should mirror LinkedIn headline and typical posting (“Senior Software Engineer · Applied AI” vs “Staff” when applying staff roles).
-- [ ] **Per-application `printProfile`** — Optional JSON override block (or separate `resume-print.json`) to swap summaryShort, reorder bullets, or bump `printBulletLimit` for a specific company. Single source still merges from master `resume.json`.
-- [ ] **References** — Keep “Available upon request” only (current P0 filter). Do not print full quotes unless requested; saves space.
+Print shows **3 bullets** (`printBulletLimit: 3`). Contract role shows tenure line only (no duplicate bullets). Full web view retains all 6 bullets.
 
----
+| Priority | Theme | Live bullet |
+|----------|-------|-----------------|
+| 1 | Scale + reliability | Reduced voucher transactional email failure rate from **17% to &lt;0.5%** via template and observability fixes adopted across Uber for Business CRM messaging. |
+| 2 | Data migration / system design | Led **zero-downtime** vouchers migration from Elasticsearch to Pinot (EVA) using custom Go shadow-traffic library; pattern reused for other datastore cutovers. |
+| 3 | Org-wide influence | Drove **~50% on-call alert reduction** for vouchers; documented handoff saving **120+ engineer-hours** for Global Support Services. |
+| 4 | Applied AI (if 4th slot) | Built agent workspace for on-call RCA and diff authoring; **~55% lower** LLM bootstrap token use vs unstructured sessions; presented at Uber Eng AI forum. |
+| 5 | Test modernization | Led AI-assisted deprecation of **850+** legacy Enzyme tests; methodology adopted by GSS and other teams. |
 
-## P1 — Engineering
+**De-jargon replacements:**
 
-- [ ] **`printMode` flag in controller** — Set `$scope.printMode = true` when `?print=1`; use in template for `ng-if` instead of CSS-only show/hide. Cleaner DOM for PDF.
-- [ ] **`displayService` print view model** — Add `display.buildPrintView(resume)` that returns pre-filtered work/skills/projects with truncated highlights already applied. Template stays dumb; logic centralized.
-- [ ] **Remove dead print markup** — Delete unused print-only info message inside `#resume` (section is screen-only anyway).
-- [ ] **Print-specific CSS file split** — Move all `@media print` rules from `Theme.css` into `print-resume.css` loaded with `media="print"` to reduce accidental screen bleed and simplify review.
-
----
-
-## P2 — Validation checklist
-
-Run after each batch of changes.
-
-### Recruiter QA
-
-- [ ] PDF is **≤ 2 pages** (Chrome, Letter, default margins, background graphics off).
-- [ ] First page shows: name, contact, summary, skills, and **current role** without scrolling.
-- [ ] Every role answerable in 5 seconds: where, when, what level, what impact.
-- [ ] No “go to website for details” for core career facts.
-- [ ] Print preview matches saved PDF ( WYSIWYG ).
-
-### ATS QA (PDF-only tools)
-
-- [ ] Run saved PDF through at least two parsers, e.g. [Jobscan PDF](https://www.jobscan.co/), [Resume Worded](https://resumeworded.com/), or open PDF in Adobe → Export to text and inspect structure.
-- [ ] Verify extracted fields:
-
-  | Field | Pass? |
-  |-------|-------|
-  | Full name | |
-  | Email | |
-  | Phone | |
-  | City, State | |
-  | Summary paragraph | |
-  | Each job title | |
-  | Each company (including grouped roles) | |
-  | Each date range | |
-  | Skills keywords (spot-check 10 target terms) | |
-  | Education institution | |
-
-- [ ] Copy-all text from PDF (Ctrl+A in viewer) → paste into Notepad. Reading order should be logical with no duplicated blocks or `[object Object]` artifacts.
-- [ ] Search PDF text for 5 target keywords from a sample JD (e.g. “Go”, “microservices”, “on-call”, “Elasticsearch”, “CI/CD”). All should hit.
-
-### Regression
-
-- [ ] Web view `/#/default` unchanged (screen-only paths still show full fidelity).
-- [ ] Interactive resume unaffected.
-- [ ] `displayService.enrich()` still infers tiers when JSON omits them.
+| Internal term | External-friendly |
+|---------------|-------------------|
+| U4B / U4B Engineering | Uber for Business |
+| EVA / Pinot | Apache Pinot (analytics datastore) |
+| Bloc templates | transactional email templates |
+| super-shane | agent workspace (internal codename OK in parens) |
+| SDUI | server-driven UI |
+| Neutrino | internal service name → omit or say "internal RPC client library" |
 
 ---
 
-## Suggested implementation order
+### 4. Add missing scale metrics — **Complete**
 
-1. **DOM cleanup** — `printMode`, remove CSS-hidden bullets, remove promo lines, repeat company names.
-2. **Contact URLs** — Full profile/website paths in print header.
-3. **Structure** — P2 structured lines, section renames, date format, drop Highlights heading.
-4. **Page budget** — Tune bullet limits + P1 summary hiding until ≤ 2 pages.
-5. **Content pass** — Re-order highlights, tighten summaryShort, skills keyword line.
-6. **Automation** — Headless PDF script + metadata.
-7. **Validation** — ATS parser + recruiter scan QA; iterate.
+Woven into `summaryShort`, Uber summary, and print bullets using verified numbers from your work:
 
----
+| Metric | Where used |
+|--------|------------|
+| 5+ years Uber | Summary |
+| 9-month zero-downtime Pinot migration | Summary + bullet |
+| 17% → &lt;0.5% email failure | Bullet |
+| ~50% on-call alert reduction | Bullet |
+| 120+ engineer-hours saved | Bullet |
+| 850+ Enzyme test files | Summary (web bullets) |
+| 10,000+ B2B accounts | Summary + Lingo |
+| 1,469 Stack Overflow reputation | `linkedin-sync.md`, profile metadata |
 
-## Files likely touched
+**Optional later:** QPS, daily event volume, TB migrated — add to Uber bullets when you have dashboard numbers.
 
-| File | Changes |
-|------|---------|
-| `data/resume.json` | Bullet order, limits, summaryShort, optional location |
-| `js/services/displayService.js` | `buildPrintView()`, print filters |
-| `js/controllers/defaultController.js` | `printMode` flag |
-| `views/Default/Default.html` | Print template structure, `ng-if` filters |
-| `views/Default/Theme.css` | Typography, page breaks, remove hide-based hacks |
-| `README.md` | Export recipe, tier docs (link here) |
-| `scripts/export-pdf.js` *(new, optional)* | Headless PDF generation |
+### 5. Consolidate Uber tenure in print header — **Complete**
+
+Merged `displayGroup: uber` plus `tenureLine` under company name in print view.
 
 ---
 
-## Out of scope (by design)
+### 6. Remove full street address — **Complete**
 
-- `.docx` / Word export
-- Interactive or web-only sections in print (profiles grid, languages, interests, publications, volunteer)
-- Profile photo in print (correct for US ATS norms)
-- Custom fonts that may not embed cleanly in PDF — stick to system/Arial/Helvetica stack for maximum text-layer fidelity
+`basics.location` is city/region/country only.
+
+---
+
+## Priority 1 — Content and positioning
+
+### 7. Target level explicitly — **Skipped**
+
+No `printProfiles` variants (per preference). Single Senior PDF at `/#/default?print=1`.
+
+---
+
+### 8. Compensate for no CS degree — **Complete**
+
+- Stack Overflow **1,469 reputation** (member since 2015) on profile + `linkedin-sync.md`
+- Education still `printExclude` for high school
+- Optional later: AWS/GCP cert, blog post, featured GitHub
+
+### 9. Skills section — optimize for ATS keyword density — **Complete**
+
+Applied: Golang, gRPC, SRE, Apache Pinot on print; Cloud Services + duplicate Backend hidden; Angular/jQuery removed from web keywords.
+
+---
+
+### 10. Lingo Communications — reframe for big-tech narrative — **Complete**
+
+`printBulletLimit: 1`; B2B platform, technical lead, acquisition language updated.
+
+---
+
+### 11. Earlier experience — **Complete**
+
+P2 one-line compression unchanged.
+
+---
+
+## Priority 2 — Platform and process improvements
+
+### 12. Code changes to support FAANG variants — **Complete** (except profiles)
+
+| Change | Status |
+|--------|--------|
+| Render `printView.awards` | **Done** |
+| Add `printView.projects` print section | **Done** |
+| Job-specific `printProfiles` | **Skipped** |
+| Export filename per profile | **Skipped** |
+| Plain-text export | **Skipped** |
+| LinkedIn/GitHub/SO in header | **Done** |
+| `validate-print` page + keyword checks | **Done** — 2 pages, all pass |
+
+### 13. ATS technical checklist — use before each submission
+
+Before every submission, verify:
+
+- [ ] Export via Chrome or `npm run export-pdf` (text layer, not image-only)
+- [ ] `npm run validate-print` passes all keyword checks
+- [ ] No headers/footers (`-- 1 of 2 --` warning)
+- [ ] No non-ASCII bullets (en-dash, middle dot) — `asciiPrint()` handles this ✓
+- [ ] Section headers: `Summary`, `Experience`, `Skills` (not `About`, `Work`) ✓
+- [ ] File name: `Shane_Ray_Senior_Software_Engineer.pdf` (underscores parse better than spaces in some ATS)
+- [ ] Submit **PDF** unless portal explicitly asks for `.docx` (then maintain a Word mirror)
+
+### 14. Tailor per company — **Skipped**
+
+No per-company `printProfiles`. Manually tweak `summaryKeywords` in JSON if needed for a specific application.
+
+---
+
+## Proposed `resume.json` content patches — **Applied**
+
+The blocks below were applied to `data/resume.json` (synced to `src/ShaneSpace.Resume.Web/data/resume.json`). Print layout trimmed to **2 pages**: 3 Uber bullets, 1 Lingo bullet, agent workspace project (description only), 2 award lines.
+
+### `basics` updates — **Applied**
+
+```json
+"label": "Senior Software Engineer | Distributed Systems & Applied AI",
+"summaryShort": "Senior Software Engineer with 5+ years at Uber building Go microservices for billing, trip lifecycle, and voucher platforms at scale. Backend and full-stack IC on Kafka-backed distributed systems, Elasticsearch/Pinot migrations, and production on-call. Applied AI practitioner: agent workspaces, prompt-driven codemods adopted across teams, and cross-service RCA tooling. Prior technical lead modernizing telecom SaaS to REST APIs, CI/CD, and large-scale data migrations.",
+"summaryKeywords": "Go, Golang, microservices, distributed systems, Kafka, Elasticsearch, Apache Pinot, Redis, SQL, CI/CD, Bazel, React, TypeScript, system design, on-call, SRE, incident response, RCA, Applied AI, LLM, prompt engineering, scalability, backend engineer"
+```
+
+### Uber `work[0]` — **Applied** (`printBulletLimit: 3` for 2-page PDF)
+
+```json
+"printBulletLimit": 4,
+"highlights": [
+  "Reduced voucher transactional email failure rate from 17% to under 0.5% via template and observability fixes adopted across Uber for Business CRM.",
+  "Led zero-downtime vouchers migration from Elasticsearch to Apache Pinot using Go shadow-traffic library; pattern reused for other datastore cutovers.",
+  "Drove ~50% on-call alert reduction; documented GSS handoff saving 120+ engineer-hours; Uber Technology and Velocity peer awards.",
+  "Built agent workspace for on-call RCA and diff authoring (~55% lower LLM bootstrap tokens vs unstructured sessions); presented at Uber Eng AI forum.",
+  "Led AI-assisted deprecation of 850+ Enzyme test files; methodology adopted by Global Support Services and other teams.",
+  "Drove Uber Me Quick Send backend, server-driven UI paths, geolocation autoclaim, and web-vouchers performance rehaul (50+ memoized selectors)."
+]
+```
+
+### Projects — **Partial**
+
+Agent workspace: `printExclude: false` on print. Enzyme migration: `printExclude: true` (content in Uber bullets; saves page space).
+
+---
+
+## Recruiter LinkedIn alignment — **Complete** (`data/linkedin-sync.md`)
+
+Copy-paste blocks ready for [linkedin.com/in/shaneray](https://www.linkedin.com/in/shaneray). Apply manually in LinkedIn (headline, About, Uber experience, skills, featured links, awards).
+
+| Field | Source |
+|-------|--------|
+| Title | Senior Software Engineer |
+| Company | Uber Technologies, Inc. |
+| Dates | May 2022–Present (FTE); Jun 2021–May 2022 contract |
+| Location | Louisville, KY / Remote |
+| Summary | `linkedin-sync.md` About section |
+| Skills | Top 25 list in `linkedin-sync.md` |
+
+---
+
+## What *not* to do
+
+- **Don't** keyword-stuff invisible white text — parsers flag it
+- **Don't** list every technology you've touched — focus P0 on last 5 years
+- **Don't** use "FANNG" in the resume — use standard titles companies search for
+- **Don't** include photo on ATS PDF (your print CSS already hides it ✓)
+- **Don't** inflate title to Staff without scope evidence
+- **Don't** add a references section on print — "available upon request" wastes space
+
+---
+
+## Implementation roadmap
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | Rewrite `summaryShort` + `summaryKeywords` | **Complete** |
+| 2 | Reorder/de-jargonize Uber bullets | **Complete** (3 on print) |
+| 3 | Enable print projects + render projects/awards in template | **Complete** |
+| 4 | Add Uber awards to `awards` array | **Complete** |
+| 5 | Prune P2 skills; add Golang/gRPC/SRE | **Complete** |
+| 6 | Gather scale metrics from Uber dashboards/docs | **Complete** (documented); optional QPS/TB later |
+| 7 | `printProfiles` for Staff / per-company | **Skipped** |
+| 8 | LinkedIn sync pass | **Complete** — `data/linkedin-sync.md` |
+| 9 | Plain-text export script | **Skipped** |
+| 10 | Run `validate-print` after each change | **Complete** — 2 pages, all keywords pass |
+
+---
+
+## Success criteria
+
+You'll know the resume is FAANG-ready when:
+
+1. **ATS:** Greenhouse / Workday auto-fill correctly extracts name, email, latest job, education
+2. **Recruiter:** 10-second skim answers — *Senior at Uber, backend/AI, remote KY, quantified impact*
+3. **HM:** Every Uber bullet has **action + tech + scale metric + business outcome**
+4. **Length:** `validate-print` reports ≤2 PDF pages — **passing**
+5. **Keyword:** `validate-print` passes — **passing**
+
+---
+
+## Quick reference — print URLs
+
+| Use case | URL |
+|----------|-----|
+| Print PDF | `/#/default?print=1` |
+| Export | `RESUME_BASE_URL=http://localhost:8080 npm run export-pdf` |
+| QA | `RESUME_BASE_URL=http://localhost:8080 npm run validate-print` |
+
+---
+
+*Last updated: 2026-07-14. All roadmap items complete. Optional: add QPS/volume metrics; paste `linkedin-sync.md` into LinkedIn; confirm award months against internal records.*
