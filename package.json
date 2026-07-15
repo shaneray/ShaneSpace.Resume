@@ -1,0 +1,12 @@
+{
+  "name": "shanespace-resume",
+  "private": true,
+  "scripts": {
+    "export-pdf": "node scripts/export-pdf.js",
+    "validate-print": "node scripts/validate-print.js"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.0.0"
+  }
+}
