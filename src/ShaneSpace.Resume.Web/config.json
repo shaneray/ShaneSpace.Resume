@@ -1,5 +1,5 @@
 {
-  "defaultPicture": "/img/user-200.png",
+  "defaultPicture": "img/user-200.png",
   "resumeUrl": "https://shanespaceresume.azurewebsites.net",
   "resumeJsonUrl": "https://raw.githubusercontent.com/shaneray/shanespace.resume/master/data/resume.json",
   "resumeSourceUrl": "https://github.com/shaneray/ShaneSpace.Resume"

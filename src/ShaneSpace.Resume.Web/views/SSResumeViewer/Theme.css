@@ -1,4 +1,4 @@
-﻿#defaultView {
+#defaultView {
     display: none;
 }
 
@@ -13,7 +13,7 @@
 
 .desktop {
     background-color: gray !important;
-    background: url(/img/Windows-10-wallpaper.jpg);
+    background: url(../../img/Windows-10-wallpaper.jpg);
     background-size: cover;
     height: 100%;
     color: white;
