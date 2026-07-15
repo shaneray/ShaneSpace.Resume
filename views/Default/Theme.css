@@ -1,60 +1,29 @@
-/*print*/
-@media print {
-    .print-only {
-        display: block !important;
-    }
-
-    .segment, section {
-        page-break-inside: avoid;
-    }
-
-    #defaultView {
-        display: block !important;
-    }
-
-    #customView {
-        display: none !important;
-    }
-
-    #nav {
-        display: none;
-    }
-
-    *,
-    *:before,
-    *:after {
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-        font-size: 0;
-    }
-
-    a[href]:after {
-        content: attr(href);
-        font-size: 14px;
-    }
-
-    abbr[title]:after {
-        content: attr(href);
-        font-size: 14px;
-    }
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-}
+/* default theme */
 
 .print-only {
     display: none;
 }
 
-/* default theme */
+.screen-only {
+    display: block;
+}
+
+body.print-preview .print-only {
+    display: block !important;
+}
+
+body.print-preview .screen-only {
+    display: none !important;
+}
+
+body.print-preview #nav,
+body.print-preview #resume,
+body.print-preview #profiles,
+body.print-preview #languages,
+body.print-preview #interests,
+body.print-preview #contact {
+    display: none !important;
+}
 h1, h2, h3, h4 {
     min-height: inherit;
     margin: 0;

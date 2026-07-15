@@ -1,5 +1,5 @@
-﻿myApp.controller('InteractiveController', ['$scope', '$http', 'windowManager', '$rootScope', '$timeout', 'config', 'resume',
-    function ($scope, $http, windowManager, $rootScope, $timeout, config, resume) {
+﻿myApp.controller('InteractiveController', ['$scope', '$http', 'windowManager', '$rootScope', '$timeout', 'config', 'resume', 'display',
+    function ($scope, $http, windowManager, $rootScope, $timeout, config, resume, display) {
         $scope.today = new Date();
         $scope.fileSystem = windowManager.fileSystem;
         $scope.windows = windowManager.windows;
@@ -11,13 +11,13 @@
 
                 // load resume
                 resume.getData(config.resumeJsonUrl)
-                    .then(function (resume) {
-                        // add resume to scope
-                        $scope.resume = resume;
-                        $scope.resumeJson = JSON.stringify($scope.resume, undefined, 4).split('\n');
+                    .then(function (resumeData) {
+                        var enriched = display.enrich(resumeData);
 
-                        // set page title
-                        $scope.siteName = resume.basics.name + "'s Resume";
+                        $scope.resume = enriched;
+                        $scope.resumeJson = JSON.stringify(enriched, undefined, 4).split('\n');
+
+                        $scope.siteName = enriched.basics.name + "'s Resume";
                     });
             });
 

@@ -7,9 +7,19 @@
             <h1 class="name">
                 {{resume.basics.name}}
             </h1>
-            <h2 class="headerLabel">
+            <h2 class="headerLabel screen-only">
                 {{resume.basics.label}}
             </h2>
+            <h2 class="headerLabel print-only" ng-if="printView">
+                {{printView.label}}
+            </h2>
+            <div class="headerContact print-only" ng-if="printView">
+                <span class="headerContactItem">{{resume.basics.email}}</span>
+                <span class="headerContactItem" ng-if="resume.basics.phone">{{resume.basics.phone}}</span>
+                <span class="headerContactItem" ng-if="resume.basics.location">{{resume.basics.location.city}}, {{resume.basics.location.region}}</span>
+                <span class="headerContactItem" ng-if="printView.website">{{printView.website}}</span>
+                <span class="headerContactItem" ng-repeat="profile in printView.profiles">{{profile.printPath}}</span>
+            </div>
         </div>
     </div>
 </header>
@@ -26,7 +36,7 @@
 <div id="content" class="container">
     <div id="contentWrapper">
 
-        <section id="contact" class="row">
+        <section id="contact" class="row screen-only">
             <aside class="col-sm-2">
                 <h3>Contact</h3>
             </aside>
@@ -39,9 +49,27 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
+                        <h4>Phone</h4>
+                        <div class="phone" ng-if="resume.basics.phone">
+                            {{resume.basics.phone}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
                         <h4>Website</h4>
                         <div class="website">
                             <a href="{{resume.basics.website}}">{{resume.basics.website}}</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>Location</h4>
+                        <div class="location" ng-if="resume.basics.location">
+                            {{resume.basics.location.city}}, {{resume.basics.location.region}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6" ng-repeat="profile in resume.basics.profiles | filter:{displayTier:'P0'}">
+                        <h4>{{profile.network}}</h4>
+                        <div>
+                            <a href="{{profile.url}}">{{profile.url}}</a>
                         </div>
                     </div>
                 </div>
@@ -50,20 +78,24 @@
 
         <section id="about" class="row">
             <aside class="col-sm-2">
-                <h3>About</h3>
+                <h3 class="screen-only">About</h3>
+                <h3 class="print-only">Summary</h3>
             </aside>
             <div class="col-sm-10">
-                <p>{{resume.basics.summary}}</p>
+                <p class="screen-only">{{resume.basics.summary}}</p>
+                <p class="print-only" ng-if="printView">{{printView.summaryShort}}</p>
+                <p class="print-only summary-keywords" ng-if="printView && printView.summaryKeywords">
+                    <strong>Core skills:</strong> {{printView.summaryKeywords}}
+                </p>
             </div>
         </section>
 
-        <section id="resume" class="row">
+        <section id="resume" class="row screen-only">
             <aside class="col-sm-2">
                 <h3>Resume</h3>
             </aside>
             <div class="col-sm-10">
-                <div class="print-only ui info message">You are viewing the static version of this resume intended for pint.  An interactive version is available online at: <a href="{{config.resumeUrl}}">{{config.resumeUrl}}</a>.</div>
-                This resume was created using Angular JS, HTML, CSS and a resume.json file.  If you find any issues, please report them via github.<br /><br />
+                This resume was created using Angular JS, HTML, CSS and a resume.json file. If you find any issues, please report them via github.<br /><br />
                 Resume JSON: <a href="{{config.resumeJsonUrl}}">resume.json</a>.<br />
                 JSON schema: <a href="http://json.schemastore.org/resume">http://json.schemastore.org/resume</a>.<br />
                 The source code for this resume can be found on GitHub <a href="{{config.resumeSourceUrl}}">{{config.resumeSourceUrl}}</a>.
@@ -75,8 +107,13 @@
                 <h3>Skills</h3>
             </aside>
             <div class="col-sm-10">
-                <div class="row">
-                    <div ng-repeat="skill in resume.skills">
+                <div class="print-only skills-compact" ng-if="printView">
+                    <div class="skills-tier" ng-repeat="skill in printView.skills">
+                        <strong>{{skill.name}}:</strong> {{skill.keywordsText}}
+                    </div>
+                </div>
+                <div class="screen-only row">
+                    <div ng-repeat="skill in resume.visibleSkills">
                         <div class="clearfix" ng-if="$index % 3 == 0"></div>
 
                         <div class="col-sm-4">
@@ -94,14 +131,15 @@
 
         <section id="work" class="row">
             <aside class="col-sm-2">
-                <h3>Work</h3>
+                <h3 class="screen-only">Work</h3>
+                <h3 class="print-only">Experience</h3>
             </aside>
             <div class="col-sm-10">
-                <div class="row">
+                <div class="row screen-only">
                     <div ng-repeat="work in resume.work">
                         <div class="clearfix" ng-if="$index % 2 == 0"></div>
 
-                        <div class="col-sm-6 segment">
+                        <div class="col-sm-6 segment work-entry" ng-class="'tier-' + work.displayTier + (work.displayGroup ? ' group-' + work.displayGroup : '')">
                             <h3 class="position">
                                 {{work.position}}
                             </h3>
@@ -110,7 +148,7 @@
                             </h4>
 
                             <span class="date">
-                                ({{work.startDate | date: "MM/yyyy"}} — {{work.endDate | date: "MM/yyyy" || "present"}})
+                                ({{work.startDate | date: "MM/yyyy"}} – {{work.endDate ? (work.endDate | date: "MM/yyyy") : "Present"}})
                             </span>
                             <span class="website pull-right">
                                 <a href="{{work.website}}">{{work.website}}</a>
@@ -120,34 +158,116 @@
                                 <div class="summary">
                                     <p>{{work.summary}}</p>
                                 </div>
-                                <br />
-                                <h4>Highlights</h4>
-                                <ul class="highlights">
-                                    <li class="bullet" ng-repeat="highlight in work.highlights">{{highlight}}</li>
-                                </ul>
+                                <div ng-if="work.highlights.length">
+                                    <br />
+                                    <h4>Highlights</h4>
+                                    <ul class="highlights">
+                                        <li class="bullet" ng-repeat="highlight in work.highlights">{{highlight}}</li>
+                                    </ul>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                    
+                </div>
+
+                <div class="print-only" ng-if="printView">
+                    <div class="print-work-entry" ng-repeat="entry in printView.work">
+                        <div ng-if="entry.merged">
+                            <div class="print-merged-company">{{entry.company}}</div>
+                            <div class="print-merged-tenure" ng-if="entry.tenureLine">{{entry.tenureLine}}</div>
+                            <div class="print-sub-role" ng-repeat="role in entry.roles">
+                                <div class="print-job-title">{{role.position}}</div>
+                                <div class="print-job-company">{{role.company}}</div>
+                                <div class="print-job-dates">{{role.datesLine}}</div>
+                                <div class="summary" ng-if="role.showSummary && role.summary">
+                                    <p>{{role.summary}}</p>
+                                </div>
+                                <ul class="highlights" ng-if="role.highlights.length">
+                                    <li ng-repeat="highlight in role.highlights">{{highlight}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div ng-if="!entry.merged">
+                            <div class="print-job-title">{{entry.role.position}}</div>
+                            <div class="print-job-company">{{entry.role.company}}</div>
+                            <div class="print-job-dates">{{entry.role.datesLine}}</div>
+                            <div class="summary" ng-if="entry.role.showSummary && entry.role.summary">
+                                <p>{{entry.role.summary}}</p>
+                            </div>
+                            <ul class="highlights" ng-if="entry.role.highlights.length">
+                                <li ng-repeat="highlight in entry.role.highlights">{{highlight}}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="earlier-experience" ng-if="printView.earlierExperience.length">
+                        <strong>Earlier Experience</strong>
+                        <div class="earlier-experience-entry" ng-repeat="entry in printView.earlierExperience">
+                            {{entry.line}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="row">
+        <section id="projects-print" class="row print-only" ng-if="printView && printView.projects.length">
+            <aside class="col-sm-2">
+                <h3>Projects</h3>
+            </aside>
+            <div class="col-sm-10 projects-compact">
+                <div class="project-entry" ng-repeat="project in printView.projects">
+                    <strong>{{project.name}}</strong>
+                    <span ng-if="project.description"> - {{project.description}}</span>
+                    <ul class="highlights" ng-if="project.highlights.length">
+                        <li ng-repeat="highlight in project.highlights">{{highlight}}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards-print" class="row print-only" ng-if="printView && printView.awards.length">
+            <aside class="col-sm-2">
+                <h3>Awards</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="award-entry" ng-repeat="award in printView.awards">
+                    <strong>{{award.line}}</strong>
+                    <span ng-if="award.summary"> - {{award.summary}}</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="row screen-only" ng-if="resume.projects.length">
+            <aside class="col-sm-2">
+                <h3>Projects</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div class="screen-only">
+                    <div class="project-entry" ng-repeat="project in resume.projects">
+                        <h4>{{project.name}} <span class="date" ng-if="project.entity">({{project.entity}})</span></h4>
+                        <p>{{project.description}}</p>
+                        <ul class="highlights" ng-if="project.highlights.length">
+                            <li ng-repeat="highlight in project.highlights">{{highlight}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="row screen-only">
             <aside class="col-sm-2">
                 <h3>Education</h3>
             </aside>
             <div class="col-sm-10">
                 <div class="row">
-                    <div class="col-sm-12 education" ng-repeat="education in resume.education">
+                    <div class="col-sm-12 education" ng-repeat="education in resume.education" ng-class="'tier-' + education.displayTier">
                         <h3>
                             <span class="area">
                                 {{education.area}} @
                             </span>
                             <span class="institution">{{education.institution}}</span>
                             <span class="date">
-                                ({{education.startDate | date: "MM/yyyy"}} — {{education.endDate | date: "MM/yyyy" || "present"}})
+                                ({{education.startDate | date: "MM/yyyy"}} – {{education.endDate ? (education.endDate | date: "MM/yyyy") : "Present"}})
                             </span>
                         </h3>
                         <div class="studyType">
@@ -166,13 +286,25 @@
             </div>
         </section>
 
-        <section id="references" class="row">
+        <section id="awards" class="row screen-only" ng-if="resume.awards.length">
+            <aside class="col-sm-2">
+                <h3>Awards</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div ng-repeat="award in resume.awards" ng-class="'award-entry tier-' + award.displayTier">
+                    <strong>{{award.title}}</strong> – {{award.awarder}} ({{award.date | date: "yyyy"}})
+                    <span>: {{award.summary}}</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="row screen-only" ng-if="resume.references.length">
             <aside class="col-sm-2">
                 <h3>References</h3>
             </aside>
             <div class="col-sm-10">
-                <div class="row">
-                    <div ng-repeat="reference in resume.references">
+                <div class="row screen-only">
+                    <div ng-repeat="reference in resume.references" ng-if="reference.displayTier !== 'P0'">
                         <div class="clearfix" ng-if="$index % 2 == 0"></div>
 
                         <div class="col-sm-6 segment">
@@ -184,12 +316,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="profiles" class="row">
+        <section id="profiles" class="row screen-only">
             <aside class="col-sm-2">
                 <h3>Profiles</h3>
             </aside>
@@ -213,7 +344,7 @@
             </div>
         </section>
 
-        <section id="languages" class="row">
+        <section id="languages" class="row screen-only">
             <aside class="col-sm-2">
                 <h3>Languages</h3>
             </aside>
@@ -230,13 +361,51 @@
                 </div>
             </div>
         </section>
+
+        <section id="interests" class="row screen-only" ng-if="resume.interests.length">
+            <aside class="col-sm-2">
+                <h3>Interests</h3>
+            </aside>
+            <div class="col-sm-10">
+                <span ng-repeat="interest in resume.interests">
+                    {{interest.name}}<span ng-if="!$last"> · </span>
+                </span>
+            </div>
+        </section>
+
+        <section id="publications" class="row screen-only" ng-if="resume.publications.length">
+            <aside class="col-sm-2">
+                <h3>Publications</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div ng-repeat="publication in resume.publications">
+                    <strong>{{publication.name}}</strong> – {{publication.publisher}} ({{publication.releaseDate | date:'yyyy'}})
+                    <p ng-if="publication.summary">{{publication.summary}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteer" class="row screen-only" ng-if="resume.volunteer.length">
+            <aside class="col-sm-2">
+                <h3>Volunteer</h3>
+            </aside>
+            <div class="col-sm-10">
+                <div ng-repeat="entry in resume.volunteer">
+                    <h4>{{entry.position}} – {{entry.organization}}</h4>
+                    <p>{{entry.summary}}</p>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
 <div class="container">
     <section id="footer" class="row">
-        <div class="footerWrapper">
+        <div class="footerWrapper screen-only">
             {{resume.basics.name}} - {{resume.basics.label}}
+        </div>
+        <div class="footerWrapper print-only" ng-if="printView">
+            {{resume.basics.name}}
         </div>
     </section>
 </div>

@@ -1,31 +1,39 @@
-﻿myApp.controller('DefaultController', ['$scope', '$http', '$timeout', 'resume', 'config', '$rootScope',
-        function ($scope, $http, $timeout, resume, config, $rootScope) {
-            // load config
+﻿myApp.controller('DefaultController', ['$scope', '$http', '$timeout', 'resume', 'config', 'display', '$rootScope', '$location',
+        function ($scope, $http, $timeout, resume, config, display, $rootScope, $location) {
+            $scope.printMode = $location.search().print === '1';
+            $scope.profileKey = $location.search().profile || 'default';
+
+            function applyResume(resumeData) {
+                $scope.resume = display.enrich(resumeData, $scope.profileKey);
+                $scope.printView = display.buildPrintView($scope.resume);
+                $scope.siteName = resumeData.basics.name + "'s Resume";
+
+                document.title = $scope.resume.basics.name + ' - ' +
+                    $scope.resume.basics.label.replace(/\s*[·|]\s*/g, ', ') + ' Resume';
+            }
+
             config.getData()
                 .then(function (config) {
                     $scope.config = config;
 
-                    // load resume
                     resume.getData(config.resumeJsonUrl)
-                        .then(function (resume) {
-                            // add resume to scope
-                            $scope.resume = resume;
+                        .then(function (resumeData) {
+                            applyResume(resumeData);
 
-                            // set page title
-                            $scope.siteName = resume.basics.name + "'s Resume";
+                            if ($scope.printMode) {
+                                document.body.classList.add('print-preview');
+                                $timeout(function () {
+                                    window.print();
+                                }, 500);
+                            }
                         });
                 });
 
-            // update resume url
             $scope.updateResumeUrl = function () {
                 url = $('#resumeJsonSetting').val();
                 resume.getData(url)
-                        .then(function (resume) {
-                            // add resume to scope
-                            $scope.resume = resume;
-
-                            // set page title
-                            $scope.siteName = resume.basics.name + "'s Resume";
+                        .then(function (resumeData) {
+                            applyResume(resumeData);
                         });
             };
         }]);
