@@ -24,6 +24,16 @@ body.print-preview #interests,
 body.print-preview #contact {
     display: none !important;
 }
+
+body.print-preview #header aside {
+    display: none !important;
+}
+
+body.print-preview #header .headerContainer {
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+}
 h1, h2, h3, h4 {
     min-height: inherit;
     margin: 0;

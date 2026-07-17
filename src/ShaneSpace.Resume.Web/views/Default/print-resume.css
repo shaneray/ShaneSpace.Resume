@@ -30,6 +30,21 @@
         display: none !important;
     }
 
+    #header aside {
+        display: none !important;
+    }
+
+    #header .headerContainer,
+    #header .col-sm-9 {
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important;
+    }
+
+    #header {
+        margin-bottom: 6pt !important;
+    }
+
     #content aside.col-sm-2,
     #content .col-sm-10 {
         width: 100% !important;
@@ -48,12 +63,12 @@
 
     section {
         page-break-inside: auto;
-        margin-bottom: 8pt;
+        margin-bottom: 6pt;
     }
 
     .print-work-entry {
-        page-break-inside: avoid;
-        margin-bottom: 8pt;
+        page-break-inside: auto;
+        margin-bottom: 6pt;
     }
 
     .print-merged-company {
@@ -69,8 +84,8 @@
     }
 
     .print-sub-role {
-        margin-bottom: 8pt;
-        page-break-inside: avoid;
+        margin-bottom: 6pt;
+        page-break-inside: auto;
     }
 
     .print-sub-role:not(:last-child) {
