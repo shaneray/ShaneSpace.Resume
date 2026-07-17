@@ -24,14 +24,14 @@
   ],
   "basics": {
     "name": "Shane Ray",
-    "label": "Senior Software Engineer | Distributed Systems & Applied AI",
+    "label": "Senior Software Engineer · Distributed Systems & AI for Engineering",
     "picture": "https://en.gravatar.com/userimage/76770699/48d84be8536e3d6f8b0a1ee386bacf9d.jpeg",
     "email": "shane.ray87@gmail.com",
     "phone": "(502) 541-6445",
     "website": "https://ShaneSpace.net",
-    "summary": "Senior Software Engineer with 5+ years at Uber as primary backend owner for the Uber for Business vouchers platform: Go microservices for billing, trip lifecycle, CRM messaging, and production on-call. Backend and full-stack IC on Kafka-backed distributed systems, a 9-month zero-downtime Elasticsearch-to-Apache Pinot migration, and enterprise-scale reliability programs. Applied AI practitioner: agent workspaces, prompt-driven codemods adopted across teams (850+ test files), and cross-service RCA tooling. Prior technical lead for a 10,000+ account B2B SaaS platform.",
-    "summaryShort": "Senior Software Engineer with 5+ years at Uber owning Go microservices for Uber for Business billing, trip lifecycle, and vouchers at enterprise scale. Primary backend on-call; led 9-month zero-downtime Elasticsearch-to-Apache Pinot migration and cut CRM email failures from 17% to under 0.5%. Applied AI practitioner: agent workspaces and prompt-driven codemods (850+ files) adopted across teams. Prior technical lead for 10,000+ account B2B SaaS.",
-    "summaryKeywords": "Go, Golang, microservices, distributed systems, Kafka, Elasticsearch, Apache Pinot, Redis, SQL, CI/CD, Bazel, React, TypeScript, system design, on-call, SRE, incident response, RCA, Applied AI, LLM, prompt engineering, scalability, backend engineer",
+    "summary": "Senior Software Engineer with 5+ years at Uber as a full-stack IC on the Uber for Business vouchers team: Go microservices for billing, trip lifecycle, and CRM messaging; React/TypeScript admin UI; and scripts/automation for operations and migrations. Regular vouchers on-call on Kafka-backed, enterprise-scale distributed systems with cross-team platform delivery. Led a 9-month zero-downtime Elasticsearch-to-Apache Pinot migration with reusable Go shadow-traffic libraries used beyond vouchers; cut CRM transactional email failures from 17% to under 0.5%. Applied AI for engineering: agent workspace for on-call RCA and diff authoring (bootstrap context ~66k to ~29k tokens, ~55% reduction; 70+ hook-governed conventions), prompt-driven codemods adopted across teams (850+ test files), and cross-service investigation tooling. Sustained high throughput (300+ diffs authored and 900+ reviews in 2023). Prior technical lead for a 10,000+ account B2B SaaS platform.",
+    "summaryShort": "Full-stack senior IC, 5+ years on Uber for Business vouchers (Go, React/TypeScript, scripts, on-call) on enterprise-scale distributed systems. Zero-downtime ES-to-Pinot migration with reusable Go libraries; CRM email failures 17% to under 0.5%. AI for engineering: agent workspace (~66k to ~29k bootstrap tokens, ~55% reduction) and 850+ file codemods adopted by GSS. 300+ diffs authored / 900+ reviews (2023). Former tech lead, 10,000+ account B2B SaaS.",
+    "summaryKeywords": "Go, Golang, microservices, distributed systems, enterprise software, enterprise-scale, Kafka, Elasticsearch, Apache Pinot, Redis, SQL, CI/CD, Bazel, React, TypeScript, full stack, full-stack, system design, on-call, SRE, incident response, RCA, cross-team, AI for engineering, LLM workflows, agent orchestration, prompt engineering, codemods, data migration, scalability, full-stack IC",
     "location": {
       "city": "Louisville",
       "countryCode": "US",
@@ -153,8 +153,8 @@
       "endDate": "",
       "description": "Node.js agent workspace for vouchers on-call RCA, diff authoring, and structured memory with hook-governed tool dispatch.",
       "highlights": [
-        "Single dispatcher over registered tools; tiered pre-flight context (~55% lower bootstrap token use vs unstructured chat sessions, measured internally).",
-        "Task-runner dashboard, mail/docs/ticket ingest, conventions catalog, and deterministic investigation capture.",
+        "Measured bootstrap context ~66k to ~29.3k tokens (~55% reduction) via tiered pre-flight and 70+ hook-governed conventions; zero-MCP sub-agent routing eliminated 1,400+ orphan MCP processes (measured internally).",
+        "Task-runner dashboard, mail/docs/ticket ingest, and deterministic on-call investigation capture used daily for production RCA.",
         "Presented at internal Eng AI Happy Hour (May 2026) as IC plus agent pairing for production engineering."
       ],
       "url": "https://ShaneSpace.net",
@@ -173,7 +173,7 @@
     {
       "name": "AI-driven Enzyme test stack migration",
       "displayTier": "P0",
-      "printExclude": true,
+      "printExclude": false,
       "startDate": "2024-06-01",
       "endDate": "2025-12-01",
       "printHighlightLimit": 0,
@@ -201,8 +201,8 @@
       "printHighlightLimit": 0,
       "description": "Go library for live shadow traffic during Elasticsearch-to-Apache Pinot datastore cutovers with built-in migration dashboards.",
       "highlights": [
-        "Used during vouchers Elasticsearch-to-Apache Pinot migration (Apr 2023-Jan 2024) with built-in migration dashboards.",
-        "Designed for reuse by other teams performing datastore cutovers."
+        "Caught datastore discrepancies and latency issues before production cutover; dashboards for accuracy, latency, and errors included out of the box.",
+        "Generic Go library adopted by other teams performing live shadow runs during datastore migrations."
       ],
       "keywords": [
         "Go",
@@ -259,6 +259,7 @@
         "Go",
         "Golang",
         "Microservices",
+        "Enterprise-scale systems",
         "Kafka",
         "gRPC",
         "Workflow engines",
@@ -285,6 +286,7 @@
       "level": "Master",
       "displayTier": "P1",
       "keywords": [
+        "Full stack",
         "TypeScript",
         "React",
         "Redux",
@@ -387,16 +389,17 @@
       "endDate": "",
       "displayTier": "P0",
       "displayGroup": "uber",
-      "printBulletLimit": 3,
+      "printBulletLimit": 7,
       "location": "Remote | Louisville, KY",
-      "summary": "Primary backend IC and on-call owner for Uber for Business vouchers: Go microservices for billing, trip lifecycle, admin web app, and CRM transactional messaging at enterprise scale.",
+      "summary": "Full-stack senior IC on the Uber for Business vouchers team: Go microservices, React/TypeScript admin app, internal scripts/automation, and on-call for billing, trip lifecycle, and CRM transactional messaging in enterprise-scale production systems.",
       "highlights": [
         "Reduced voucher transactional email failure rate from 17% to under 0.5% via CRM template and observability fixes adopted platform-wide for Uber for Business enterprise customers.",
-        "Led 9-month zero-downtime Elasticsearch-to-Apache Pinot migration for vouchers analytics using Go shadow-traffic library; pattern reused for other datastore cutovers.",
-        "Drove ~50% on-call alert reduction across vouchers Go microservices; documented GSS handoff saving 120+ engineer-hours; Uber Technology and Velocity peer awards.",
-        "Built agent workspace for on-call RCA and diff authoring (~55% lower LLM bootstrap tokens vs unstructured sessions); presented at Uber Eng AI forum (May 2026).",
+        "Led 9-month zero-downtime Elasticsearch-to-Apache Pinot migration using Go shadow-traffic and query client libraries; reusable pattern for other teams' datastore cutovers.",
+        "Built agent workspace for on-call RCA and diff authoring (bootstrap ~66k to ~29k tokens, ~55% reduction; 70+ governed conventions); presented at Uber Eng AI Happy Hour (May 2026).",
         "Led AI-assisted deprecation of 850+ Enzyme test files across vouchers admin codebase; methodology adopted by Global Support Services and other teams.",
-        "Drove Uber Me Quick Send backend, server-driven UI paths, geolocation autoclaim, and web-vouchers performance rehaul (50+ memoized selectors)."
+        "Drove ~50% on-call alert reduction across vouchers Go microservices; documented GSS handoff saving 120+ engineer-hours; Uber Technology and Velocity peer awards.",
+        "Shipped Open Graph rich previews on high-volume voucher claim SMS links (idea through production); Uber Me Quick Send backend and server-driven UI paths.",
+        "Protected 467 production geofence policies during advanced-locations backfill; web-vouchers performance rehaul (50+ memoized selectors); 6,000+ trial vouchers issued via guided onboarding feature."
       ]
     },
     {
@@ -408,7 +411,7 @@
       "displayTier": "P0",
       "displayGroup": "uber",
       "printBulletLimit": 0,
-      "printShowSummary": false,
+      "printShowSummary": true,
       "summary": "Contract engineer on Uber Transit (Jun-Nov 2021) then Uber for Business Vouchers (Dec 2021-May 2022); converted to full-time May 2022.",
       "highlights": []
     },
